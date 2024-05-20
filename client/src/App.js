@@ -12,11 +12,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={Gorca} className="App-logo" alt="logo" />
+      
         <Router>
-          <Navbar/>
+            <Navbar/>
         </Router>
-      </header>
-
+        </header>
     </div>
   );
 }

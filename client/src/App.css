@@ -4,6 +4,7 @@
 
 .App-logo {
   height: 10vmin;
+  width: 100%;
   pointer-events: none;
 }
 
@@ -21,6 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  width: 100%;
   color: white;
 }
 

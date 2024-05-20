@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/eduardocamacho/Downloads/API/API.csproj": {}
+    "/Users/eduardocamacho/GORCA/API/API.csproj": {}
   },
   "projects": {
-    "/Users/eduardocamacho/Downloads/API/API.csproj": {
+    "/Users/eduardocamacho/GORCA/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/eduardocamacho/Downloads/API/API.csproj",
+        "projectUniqueName": "/Users/eduardocamacho/GORCA/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/eduardocamacho/Downloads/API/API.csproj",
+        "projectPath": "/Users/eduardocamacho/GORCA/API/API.csproj",
         "packagesPath": "/Users/eduardocamacho/.nuget/packages/",
-        "outputPath": "/Users/eduardocamacho/Downloads/API/obj/",
+        "outputPath": "/Users/eduardocamacho/GORCA/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/eduardocamacho/.nuget/NuGet/NuGet.Config"
@@ -41,6 +41,16 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

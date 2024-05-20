@@ -1,62 +1,65 @@
 import React from 'react'
 import Nav from '../Styles/Nav.css'
+import {Link} from 'react-router-dom'
+import Gorca from '../../Gorca.jpg'
+
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar scroll</a>
+                <Link className="navbar-brand" to='/'><img src={Gorca} alt="Logo de GORCA" /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarScroll">
                     <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style={{height: 100 + 'px'}}>
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <Link className="nav-link" to='/'>Home</Link>
                         </li>
             
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle" to='/Catalogo' role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Catalogo
-                            </a>
+                            </Link>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Powerade</a></li>
-                                <li><a className="dropdown-item" href="#"> Fanta</a></li>
-                                <li><a className="dropdown-item" href="#"> Jumex</a></li>
+                                <li><Link className="dropdown-item" to='/Powerade'>Powerade</Link></li>
+                                <li><Link className="dropdown-item" to='/Fanta'> Fanta</Link></li>
+                                <li><Link className="dropdown-item" to='/Jumex'> Jumex</Link></li>
                                 <li><hr className="dropdown-divider"/></li>
                             </ul>
                         </li>
 
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle" to='/Promociones' role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Promociones
-                            </a>
+                            </Link>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">10%</a></li>
-                                <li><a className="dropdown-item" href="#">20%</a></li>
-                                <li><a className="dropdown-item" href="#">2x1</a></li>
-                                <li><a className="dropdown-item" href="#">4x3</a></li>
+                                <li><Link className="dropdown-item" to='/10%'>10%</Link></li>
+                                <li><Link className="dropdown-item" to='/20%'>20%</Link></li>
+                                <li><Link className="dropdown-item" to='/2x1'>2x1</Link></li>
+                                <li><Link className="dropdown-item" to='/4x3'>4x3</Link></li>
                                 <li><hr className="dropdown-divider"/></li>
                             </ul>
                         </li>
 
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle" to='/Sucursales' role="button" data-bs-toggle="dropdown" aria-expanded="true">
                                 Sucursales
-                            </a>
+                            </Link>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Guaymas</a></li>
+                                <li><Link className="dropdown-item" to='/Guyamas'>Guaymas</Link></li>
                                 <li><hr className="dropdown-divider"/></li>
                             </ul>
                         </li>
 
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle" to='/Acerca' role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Acerca
-                            </a>
+                            </Link>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Desarrollo</a></li>
-                                <li><a className="dropdown-item" href="#">Historia</a></li>
-                                <li><a className="dropdown-item" href="#">Valores</a></li>                               
+                                <li><Link className="dropdown-item" to='/Desarrollo'>Desarrollo</Link></li>
+                                <li><Link className="dropdown-item" to='/Historia'>Historia</Link></li>
+                                <li><Link className="dropdown-item"to='/Valores'>Valores</Link></li>                               
                                 <li><hr className="dropdown-divider"/></li>
                             </ul>
                         </li>

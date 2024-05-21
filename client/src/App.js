@@ -4,8 +4,8 @@ import './App.css';
 import  {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navbar from './Components/Navegacion/Navbar.js'
 import Inicio  from './Components/Paginas/Inicio.js';    
-import Items from './Components/Paginas/Items.js';
-import Pokemons from './Components/Paginas/Pokemons.js';
+import Catalogo from './Components/Paginas/Catalogo.js';
+import Promociones from './Components/Paginas/Promociones.js';
 
 function App() {
   return (

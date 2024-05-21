@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../Styles/Nav.css'
+import '../Styles/Nav.css'
 import {Link} from 'react-router-dom'
 import Gorca from '../../Gorca.jpg'
 

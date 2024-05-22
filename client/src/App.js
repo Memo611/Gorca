@@ -14,13 +14,14 @@ import Promocion20 from './Components/Paginas/Promociones/VeintePorciento.js';
 import Promocion2x1 from './Components/Paginas/Promociones/DosxUno.js';
 import Promocion4x3 from './Components/Paginas/Promociones/CuatroxTres.js'
 
-import SucursalGuaymas from './Components/Paginas/Sucursales/Guaymas.js';
+import Sucursal from './Components/Paginas/Sucursales/Sucursales.js';
 import Acerca from './Components/Paginas/Acerca.js';
+import Sucursales from './Components/Paginas/Sucursales/Sucursales.js'; 
 
 const links = [
   {
       name: "Home",
-      href: "/home",
+      href: "/",
   },
   {
       name: "Promociones",
@@ -58,7 +59,7 @@ function App() {
         <Router>
         <Navbar links={links}/>  
           <Routes>      
-          <Route path='/home' element={<Inicio />} />
+          <Route path='/' element={<Inicio />} />
           <Route path='/catalogo/Powerade' element={<Powerade />} />
           <Route path='/catalogo/Fanta' element={<Fanta />} />
           <Route path='/catalogo/Jumex' element={<Jumex />} />
@@ -66,7 +67,8 @@ function App() {
           <Route path='/promociones/20%' element={<Promocion20 />} />
           <Route path='/promociones/2x1' element={<Promocion2x1 />} />
           <Route path='/promociones/4x3' element={<Promocion4x3 />} />
-          <Route path='/sucursales/Guaymas' element={<SucursalGuaymas />} />
+          <Route path='/sucursales/Guaymas' element={<Sucursal />} />
+          <Route path='/sucursales' element={<Sucursales />} />
           <Route path='/acerca' element={<Acerca />} />
           </Routes>
         </Router>

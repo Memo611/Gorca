@@ -1,0 +1,20 @@
+/* src/Components/Paginas/Sucursales/Sucursal.css */
+
+.sucursal-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.sucursal-card .card-title {
+    font-weight: bold;
+}
+
+.sucursal-card .map-placeholder {
+    background-color: #d3d3d3;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}

@@ -9,21 +9,21 @@ import { Button } from 'react-bootstrap';
 const products = [
   {
     name: "Fanta Naranja",
-    description: "Vuelve más divertidos tus momentos con el intenso y frutal sabor de Fanta Naranja. Ideal para una tarde con amigos o para acompañar tus snacks favoritos. ¡Más sabor, más diversión!",
+    description: "Refresco Fanta Sabor Naranja 600 ml PET 12U HARMONY",
     imgSrc: naranja, 
     href: "#",
     nutrition: "#",
   },
   {
     name: "Fanta Uva",
-    description: "Refresco frutal sabor uva, intenso y divertido · Ideal para una tarde con amigos o para acompañar tus snacks favoritos",
+    description: "Refresco Fanta Sabor Uva 600 ml PET 12U HARMONY",
     imgSrc: Uva, 
     href: "#",
     nutrition: "#",
   },
   {
     name: "Fanta Fresa",
-    description: "¡Fanta fresa intensifica la diversión y el sabor de tus snacks con su delicioso, frutal y burbujeante sabor! No importa si la disfrutas solo o con amigos, la variedad de sabores de Fanta siempre tiene algo nuevo para ti.",
+    description: "Refresco Fanta Sabor Fresa 600 ml PET 12U HARMONY",
     imgSrc: fresa, 
     href: "#",
     nutrition: "#",
@@ -47,8 +47,7 @@ const Fanta = () => {
             <div className="product-info">
               <h2 className="product-name">{product.name}</h2>
               <p className="product-description">{product.description}</p>
-              <Button variant="dark" href={product.href} className="product-button">Consíguelo aquí</Button>
-              <a href={product.nutrition} className="nutrition-link">Información nutricional</a>
+              <Button variant="dark" href={product.href} className="product-button">Agregar</Button>
             </div>
           </div>
         ))}

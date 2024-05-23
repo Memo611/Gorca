@@ -7,9 +7,10 @@ public class ItemTicket
 {
     public int idTicket { get; set; }
     public JSType.Date FecEmision { get; set; }
+    public TimeOnly HoraEmi { get; set; }
     [Column(TypeName="money")]
     public decimal Subt { get; set; }
-    public int IVA { get; set; }
+    public decimal IVA { get; set; }
     [Column(TypeName="money")]
     public decimal Tot { get; set; }
 }

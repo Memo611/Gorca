@@ -1,3 +1,4 @@
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -21,20 +22,21 @@ public class EmpleadosController : ControllerBase
     [HttpGet]
     public IEnumerable<ItemEmpleado> Get()
     {
-        var listaEmpleados = (from e in _contexto.Empleados
+        var listaEmpleados = (from e in _contexto.Empleado
             where e.Habilitado == true
             select new ItemEmpleado()
             {
-                idEmp = e.ID_emp,
-                Rfc = e.RFC,
-                Curp = e.CURP,
-                NomEmp = e.Nombre,
+                idEmp = e.ID_Emp,
+                Rfc = e.RFC_Emp,
+                Curp = e.CURP_Emp,
+                NomEmp = e.Nombre_Pila,
+                ApeP = e.Apellido_P,
+                ApeM = e.Apellido_M,
                 Naci = e.Fecha_nac,
                 NumSoci = e.NSS,
                 PuestEmp = e.Puesto,
                 SalEmp = e.Salario,
-                Contrat = e.Fecha_contrat,
-                Tel = e.Telefono
+                Contrat = e.Fecha_contrato
 
             }).ToArray();
         return listaEmpleados;
@@ -44,20 +46,21 @@ public class EmpleadosController : ControllerBase
     [HttpGet("{id}")]
     public ItemEmpleado Get(int id)
     {
-        var empleado = (from e in _contexto.Empleados
-            where e.ID_emp == id
+        var empleado = (from e in _contexto.Empleado
+            where e.ID_Emp == id
             select new ItemEmpleado()
             {
-                idEmp = e.ID_emp,
-                Rfc = e.RFC,
-                Curp = e.CURP,
-                NomEmp = e.Nombre,
+                idEmp = e.ID_Emp,
+                Rfc = e.RFC_Emp,
+                Curp = e.CURP_Emp,
+                NomEmp = e.Nombre_Pila,
+                ApeP = e.Apellido_P,
+                ApeM = e.Apellido_M,
                 Naci = e.Fecha_nac,
                 NumSoci = e.NSS,
                 PuestEmp = e.Puesto,
                 SalEmp = e.Salario,
-                Contrat = e.Fecha_contrat,
-                Tel = e.Telefono
+                Contrat = e.Fecha_contrato
             }).FirstOrDefault();
 
         return empleado;
@@ -71,9 +74,9 @@ public class EmpleadosController : ControllerBase
             return BadRequest();
 
         var empleado = new Empleado();
-        empleado.RFC = nuevoEmpleado.Rfc;
+        empleado.RFC_Emp = nuevoEmpleado.Rfc;
 
-        _contexto.Empleados.Add(empleado);
+        _contexto.Empleado.Add(empleado);
         _contexto.SaveChanges();
 
         return Ok();
@@ -83,12 +86,12 @@ public class EmpleadosController : ControllerBase
     [HttpPut("{id}")]
     public ActionResult Put(int id, [FromBody] ItemEmpleado empleado)
     {
-        var empleadoModificar = _contexto.Empleados.Find(id);
+        var empleadoModificar = _contexto.Empleado.Find(id);
 
         if (empleado == null)
             return BadRequest();
 
-        empleadoModificar.RFC = empleado.Rfc;
+        empleadoModificar.RFC_Emp = empleado.Rfc;
         _contexto.SaveChanges();
 
         return Ok();
@@ -98,7 +101,7 @@ public class EmpleadosController : ControllerBase
     [HttpDelete("{id}")]
     public ActionResult Delete(int id)
     {
-        var empleado = _contexto.Empleados.Find(id);
+        var empleado = _contexto.Empleado.Find(id);
 
         if(empleado != null)
             empleado.Habilitado = !empleado.Habilitado;

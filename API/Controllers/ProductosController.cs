@@ -1,3 +1,4 @@
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -25,20 +26,21 @@ public class ProductosController : ControllerBase
             where p.Habilitado == true
             select new ItemProducto()
             {
-                idProd = p.ID_prod,
+                idProd = p.ID_Prod,
                 Marc = p.Marca,
                 Vol = p.Volumen,
-                FecFresc = p.Fecha_max_fresc,
+                FecFresc = p.Fecha_Max_Frescura,
                 Sabo = p.Sabor,
+                Sku = p.SKU,
                 Prec = p.Precio,
-                ObjImpu = p.Objeto_impu,
-                ClavUni = p.Clave_unidad,
-                ClavProd = p.Clave_prod_serv,
-                BaseMan = p.Base_manual,
+                ObjImpu = p.Obj_Impu,
+                ClavUni = p.Clave_Unidad,
+                ClavProd = p.Clave_Prod_Serv,
+                BaseMan = p.Base_Manual,
                 Desc = p.Descripcion,
-                Uni = p.Unidad,
-                StockMin = p.Stock_min,
-                StockMax =p.Stock_max 
+                Existencia = p.Cant_Exist,
+                StockMin = p.Stock_Min,
+                StockMax =p.Stock_Max 
                     
 
             }).ToArray();
@@ -50,23 +52,24 @@ public class ProductosController : ControllerBase
     public ItemProducto Get(int id)
     {
         var producto = (from p in _contexto.Producto
-            where p.ID_prod == id
+            where p.ID_Prod == id
             select new ItemProducto()
             {
-                idProd = p.ID_prod,
+                idProd = p.ID_Prod,
                 Marc = p.Marca,
                 Vol = p.Volumen,
-                FecFresc = p.Fecha_max_fresc,
+                FecFresc = p.Fecha_Max_Frescura,
                 Sabo = p.Sabor,
+                Sku = p.SKU,
                 Prec = p.Precio,
-                ObjImpu = p.Objeto_impu,
-                ClavUni = p.Clave_unidad,
-                ClavProd = p.Clave_prod_serv,
-                BaseMan = p.Base_manual,
+                ObjImpu = p.Obj_Impu,
+                ClavUni = p.Clave_Unidad,
+                ClavProd = p.Clave_Prod_Serv,
+                BaseMan = p.Base_Manual,
                 Desc = p.Descripcion,
-                Uni = p.Unidad,
-                StockMin = p.Stock_min,
-                StockMax =p.Stock_max 
+                Existencia = p.Cant_Exist,
+                StockMin = p.Stock_Min,
+                StockMax =p.Stock_Max 
             }).FirstOrDefault();
 
         return producto;
@@ -79,8 +82,8 @@ public class ProductosController : ControllerBase
         if (nuevoProducto.idProd > 0)
             return BadRequest();
 
-        var producto = new Productos();
-        producto.ID_prod = nuevoProducto.idProd;
+        var producto = new Producto();
+        producto.ID_Prod = nuevoProducto.idProd;
 
         _contexto.Producto.Add(producto);
         _contexto.SaveChanges();
@@ -97,7 +100,7 @@ public class ProductosController : ControllerBase
         if (producto == null)
             return BadRequest();
 
-        productoModificar.ID_prod = producto.idProd;
+        productoModificar.ID_Prod = producto.idProd;
         _contexto.SaveChanges();
 
         return Ok();

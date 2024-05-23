@@ -1,3 +1,4 @@
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -21,19 +22,20 @@ public class FacturasController : ControllerBase
     [HttpGet]
     public IEnumerable<ItemFactura> Get()
     {
-        var listaFacturas = (from f in _contexto.Facturas
+        var listaFacturas = (from f in _contexto.Factura
             where f.Habilitado == true
             select new ItemFactura()
             {
                 Fol = f.Folio,
                 Ver = f.Version,
-                MetPago = f.Metodo_pago,
+                MetPago = f.Metodo_Pago,
                 NumCer = f.Num_certif,
-                ForPago = f.Forma_pago,
-                FecEmi = f.Fecha_emision,
-                Subt = f.Subtotal,
-                IVA = f.IVA,
-                Tot = f.Total
+                ForPago = f.Forma_Pago,
+                FecEmi = f.Fecha_Emision_Fac,
+                HoraEmi = f.Hora_Emision_Fac,
+                Subt = f.Subtotal_Fac,
+                IVA = f.IVA_Fac,
+                Tot = f.Total_Fac
 
             }).ToArray();
         return listaFacturas;
@@ -43,19 +45,20 @@ public class FacturasController : ControllerBase
     [HttpGet("{id}")]
     public ItemFactura Get(int id)
     {
-        var factura = (from f in _contexto.Facturas
+        var factura = (from f in _contexto.Factura
             where f.Folio == id
             select new ItemFactura()
             {
                 Fol = f.Folio,
                 Ver = f.Version,
-                MetPago = f.Metodo_pago,
+                MetPago = f.Metodo_Pago,
                 NumCer = f.Num_certif,
-                ForPago = f.Forma_pago,
-                FecEmi = f.Fecha_emision,
-                Subt = f.Subtotal,
-                IVA = f.IVA,
-                Tot = f.Total
+                ForPago = f.Forma_Pago,
+                FecEmi = f.Fecha_Emision_Fac,
+                HoraEmi = f.Hora_Emision_Fac,
+                Subt = f.Subtotal_Fac,
+                IVA = f.IVA_Fac,
+                Tot = f.Total_Fac
                 
             }).FirstOrDefault();
 
@@ -72,7 +75,7 @@ public class FacturasController : ControllerBase
         var factura = new Factura();
         factura.Folio = nuevaFactura.Fol;
 
-        _contexto.Facturas.Add(factura);
+        _contexto.Factura.Add(factura);
         _contexto.SaveChanges();
 
         return Ok();
@@ -82,7 +85,7 @@ public class FacturasController : ControllerBase
     [HttpPut("{id}")]
     public ActionResult Put(int id, [FromBody] ItemFactura factura)
     {
-        var facturaModificar = _contexto.Facturas.Find(id);
+        var facturaModificar = _contexto.Factura.Find(id);
 
         if (factura == null)
             return BadRequest();
@@ -97,7 +100,7 @@ public class FacturasController : ControllerBase
     [HttpDelete("{id}")]
     public ActionResult Delete(int id)
     {
-        var factura = _contexto.Facturas.Find(id);
+        var factura = _contexto.Factura.Find(id);
 
         if(factura != null)
             factura.Habilitado = !factura.Habilitado;

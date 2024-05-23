@@ -1,3 +1,4 @@
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlTypes;
@@ -9,16 +10,24 @@ public class Factura
 {
     [Key]
     public int Folio { get; set; }
-    public string Version { get; set; }
-    public string Metodo_pago { get; set; }
+    public int Version { get; set; }
+    public string Metodo_Pago { get; set; }
     public int Num_certif { get; set; }
-    public string Forma_pago { get; set; }
-    public JSType.Date Fecha_emision { get; set; }
+    public string Forma_Pago { get; set; }
+    public DateTime Fecha_Emision_Fac { get; set; }
+    public TimeZone Hora_Emision_Fac { get; set; }
     [Column(TypeName="money")]
-    public decimal Subtotal { get; set; }
-    public int IVA { get; set; }
+    public decimal Subtotal_Fac { get; set; }
+    public decimal IVA_Fac { get; set; }
     [Column(TypeName="money")]
-    public decimal Total { get; set; }
+    public decimal Total_Fac { get; set; }
+    //
     public bool Habilitado { get; set; }
     
+    //LLAVES FORANEAS
+    public string ID_Cli { get; set; }
+    public string ID_Gorca { get; set; }
+    public virtual Clientes Clientes { get; set; }
+    public virtual gorca Gorca { get; set; }
 }
+

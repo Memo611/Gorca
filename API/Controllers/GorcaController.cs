@@ -1,3 +1,4 @@
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -25,17 +26,17 @@ public class GorcaController : ControllerBase
             where g.Habilitado == true
             select new ItemGORCA()
             {
-                idEmpr = g.ID_empresa,
-                Rfc = g.RFC,
-                RegFis = g.Regimen_fiscal,
-                NomCom = g.Nombre_comercial,
-                Calle = g.Calle,
-                Num = g.Numero,
-                Col = g.Colonia,
-                Ciud = g.Ciudad,
-                CP = g.CP,
-                Pais = g.Pais,
-                Tel = g.Telefono
+                idEmpr = g.ID_Gorca,
+                Rfc = g.RFC_G,
+                RazSoc = g.Razon_Social_G,
+                RegFis = g.Regimen_Fiscal_G,
+                NomCom = g.Nombre_Comercial_G,
+                Calle = g.Calle_G,
+                Num = g.Numero_G,
+                Col = g.Colonia_G,
+                Ciud = g.Ciudad_G,
+                CP = g.CP_G,
+                Pais = g.Pais_G
 
             }).ToArray();
         return listaEmpresas;
@@ -46,20 +47,20 @@ public class GorcaController : ControllerBase
     public ItemGORCA Get(int id)
     {
         var empresa = (from g in _contexto.Gorca
-            where g.ID_empresa == id
+            where g.ID_Gorca == id
             select new ItemGORCA()
             {
-                idEmpr = g.ID_empresa,
-                Rfc = g.RFC,
-                RegFis = g.Regimen_fiscal,
-                NomCom = g.Nombre_comercial,
-                Calle = g.Calle,
-                Num = g.Numero,
-                Col = g.Colonia,
-                Ciud = g.Ciudad,
-                CP = g.CP,
-                Pais = g.Pais,
-                Tel = g.Telefono
+                idEmpr = g.ID_Gorca,
+                Rfc = g.RFC_G,
+                RazSoc = g.Razon_Social_G,
+                RegFis = g.Regimen_Fiscal_G,
+                NomCom = g.Nombre_Comercial_G,
+                Calle = g.Calle_G,
+                Num = g.Numero_G,
+                Col = g.Colonia_G,
+                Ciud = g.Ciudad_G,
+                CP = g.CP_G,
+                Pais = g.Pais_G
             }).FirstOrDefault();
 
         return empresa;
@@ -72,8 +73,8 @@ public class GorcaController : ControllerBase
         if (nuevaEmpresa.idEmpr > 0)
             return BadRequest();
 
-        var empresa = new GORCA();
-        empresa.ID_empresa = nuevaEmpresa.idEmpr;
+        var empresa = new gorca();
+        empresa.ID_Gorca = nuevaEmpresa.idEmpr;
 
         _contexto.Gorca.Add(empresa);
         _contexto.SaveChanges();
@@ -90,7 +91,7 @@ public class GorcaController : ControllerBase
         if (empresa == null)
             return BadRequest();
 
-        empresaModificar.ID_empresa = empresa.idEmpr;
+        empresaModificar.ID_Gorca = empresa.idEmpr;
         _contexto.SaveChanges();
 
         return Ok();

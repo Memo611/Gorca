@@ -9,11 +9,12 @@ public class ItemEmpleado
     public string Rfc  { get; set; }
     public string Curp { get; set; }
     public string NomEmp { get; set; }
-    public JSType.Date Naci { get; set; }
+    public string ApeP { get; set; }
+    public string ApeM { get; set; }
+    public DateTime Naci { get; set; }
     public int NumSoci { get; set; }
     public string PuestEmp { get; set; }
     [Column(TypeName="money")]
     public decimal SalEmp { get; set; }
-    public JSType.Date Contrat { get; set; }
-    public string Tel { get; set; }
+    public DateTime Contrat { get; set; }
 }

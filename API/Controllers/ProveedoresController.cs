@@ -1,3 +1,4 @@
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -21,21 +22,21 @@ public class ProveedoresController : ControllerBase
     [HttpGet]
     public IEnumerable<ItemProveedor> Get()
     {
-        var listaProveedores = (from pro in _contexto.Proveedor
+        var listaProveedores = (from pro in _contexto.Proveedores
             where pro.Habilitado == true
             select new ItemProveedor()
             {
-                idEmpr = pro.ID_empresa,
-                Rfc = pro.RFC,
-                RegFis = pro.Regimen_fiscal,
-                NomCom = pro.Nombre_comercial,
-                Calle = pro.Calle,
-                Num = pro.Numero,
-                Col = pro.Colonia,
-                Ciud = pro.Ciudad,
-                CP = pro.CP,
-                Pais = pro.Pais,
-                Tel = pro.Telefono
+                idEmpr = pro.ID_Prov,
+                Rfc = pro.RFC_Prov,
+                RazSoc = pro.Razon_Social_Prov,
+                RegFis = pro.Regimen_Fiscal_Prov,
+                NomCom = pro.Nombre_Comercial_Prov,
+                Calle = pro.Calle_Prov,
+                Num = pro.Numero_Prov,
+                Col = pro.Colonia_Prov,
+                Ciud = pro.Ciudad_Prov,
+                CP = pro.CP_Prov,
+                Pais = pro.Pais_Prov
                     
 
             }).ToArray();
@@ -46,21 +47,21 @@ public class ProveedoresController : ControllerBase
     [HttpGet("{id}")]
     public ItemProveedor Get(int id)
     {
-        var proveedor = (from pro in _contexto.Proveedor
-            where pro.ID_empresa == id
+        var proveedor = (from pro in _contexto.Proveedores
+            where pro.ID_Prov == id
             select new ItemProveedor()
             {
-                idEmpr = pro.ID_empresa,
-                Rfc = pro.RFC,
-                RegFis = pro.Regimen_fiscal,
-                NomCom = pro.Nombre_comercial,
-                Calle = pro.Calle,
-                Num = pro.Numero,
-                Col = pro.Colonia,
-                Ciud = pro.Ciudad,
-                CP = pro.CP,
-                Pais = pro.Pais,
-                Tel = pro.Telefono
+                idEmpr = pro.ID_Prov,
+                Rfc = pro.RFC_Prov,
+                RazSoc = pro.Razon_Social_Prov,
+                RegFis = pro.Regimen_Fiscal_Prov,
+                NomCom = pro.Nombre_Comercial_Prov,
+                Calle = pro.Calle_Prov,
+                Num = pro.Numero_Prov,
+                Col = pro.Colonia_Prov,
+                Ciud = pro.Ciudad_Prov,
+                CP = pro.CP_Prov,
+                Pais = pro.Pais_Prov
             }).FirstOrDefault();
 
         return proveedor;
@@ -74,9 +75,9 @@ public class ProveedoresController : ControllerBase
             return BadRequest();
 
         var proveedor = new Proveedores();
-        proveedor.ID_empresa = nuevoProveedor.idEmpr;
+        proveedor.ID_Prov = nuevoProveedor.idEmpr;
 
-        _contexto.Proveedor.Add(proveedor);
+        _contexto.Proveedores.Add(proveedor);
         _contexto.SaveChanges();
 
         return Ok();
@@ -86,12 +87,12 @@ public class ProveedoresController : ControllerBase
     [HttpPut("{id}")]
     public ActionResult Put(int id, [FromBody] ItemProveedor proveedor)
     {
-        var proveedorModificar = _contexto.Proveedor.Find(id);
+        var proveedorModificar = _contexto.Proveedores.Find(id);
 
         if (proveedor == null)
             return BadRequest();
 
-        proveedorModificar.ID_empresa = proveedor.idEmpr;
+        proveedorModificar.ID_Prov = proveedor.idEmpr;
         _contexto.SaveChanges();
 
         return Ok();
@@ -101,7 +102,7 @@ public class ProveedoresController : ControllerBase
     [HttpDelete("{id}")]
     public ActionResult Delete(int id)
     {
-        var proveedor = _contexto.Proveedor.Find(id);
+        var proveedor = _contexto.Proveedores.Find(id);
 
         if(proveedor != null)
             proveedor.Habilitado = !proveedor.Habilitado;

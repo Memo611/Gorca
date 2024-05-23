@@ -1,3 +1,4 @@
+/*
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -25,11 +26,12 @@ public class TicketsController : ControllerBase
             where t.Habilitado == true
             select new ItemTicket()
             {
-                idTicket = t.ID_ticket,
-                FecEmision = t.Fecha_emision,
-                Subt = t.Subtotal,
-                IVA = t.IVA,
-                Tot = t.Total
+                idTicket = t.ID_Ticket,
+                FecEmision = t.Fecha_Emision_Tic,
+                HoraEmi = t.Hora_Emision_Tic,
+                Subt = t.Subtotal_Tic,
+                IVA = t.IVA_Tic,
+                Tot = t.Total_Tic
 
             }).ToArray();
         return listaTickets;
@@ -40,14 +42,15 @@ public class TicketsController : ControllerBase
     public ItemTicket Get(int id)
     {
         var ticket = (from t in _contexto.TicketVentas
-            where t.ID_ticket == id
+            where t.ID_Ticket == id
             select new ItemTicket()
             {
-                idTicket = t.ID_ticket,
-                FecEmision = t.Fecha_emision,
-                Subt = t.Subtotal,
-                IVA = t.IVA,
-                Tot = t.Total
+                idTicket = t.ID_Ticket,
+                FecEmision = t.Fecha_Emision_Tic,
+                HoraEmi = t.Hora_Emision_Tic,
+                Subt = t.Subtotal_Tic,
+                IVA = t.IVA_Tic,
+                Tot = t.Total_Tic
             }).FirstOrDefault();
 
         return ticket;
@@ -60,8 +63,8 @@ public class TicketsController : ControllerBase
         if (nuevoTicket.idTicket > 0)
             return BadRequest();
 
-        var ticket = new Ticket_venta();
-        ticket.ID_ticket = nuevoTicket.idTicket;
+        var ticket = new Ticket();
+        ticket.ID_Ticket = nuevoTicket.idTicket;
 
         _contexto.TicketVentas.Add(ticket);
         _contexto.SaveChanges();
@@ -78,7 +81,7 @@ public class TicketsController : ControllerBase
         if (ticket == null)
             return BadRequest();
 
-        ticketModificar.ID_ticket = ticket.idTicket;
+        ticketModificar.ID_Ticket = ticket.idTicket;
         _contexto.SaveChanges();
 
         return Ok();
@@ -98,3 +101,4 @@ public class TicketsController : ControllerBase
         return Ok();
     }
 }
+*/

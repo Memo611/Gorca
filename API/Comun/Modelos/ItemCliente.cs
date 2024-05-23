@@ -13,6 +13,5 @@ namespace API.Comun
         public string DirCiudad { get; set; }
         public int CP { get; set; }
         public string DirPais { get; set; }
-        public string Tel { get; set; }
     }
 }

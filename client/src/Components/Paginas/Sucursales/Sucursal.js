@@ -1,7 +1,7 @@
 // src/Components/Paginas/Sucursales/Sucursal.js
 
 import React from 'react';
-import '../../Styles/Sucursal.css'; // Asegúrate de crear este archivo para los estilos personalizados
+import '../../Styles/Paginas/Sucursales/Sucursal.css'; // Asegúrate de crear este archivo para los estilos personalizados
 
 const Sucursal = ({ title, address, city, state, zip, country, map }) => {
     return (

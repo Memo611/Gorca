@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Sucursal from './Sucursal';
-import '../../Styles/Sucursales.css'; // Asegúrate de crear este archivo para los estilos personalizados
+import '../../Styles/Paginas/Sucursales/Sucursales.css'; // Asegúrate de crear este archivo para los estilos personalizados
 
 const Sucursales = () => {
     return (

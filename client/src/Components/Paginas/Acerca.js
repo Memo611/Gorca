@@ -1,7 +1,7 @@
 // src/Components/Paginas/Acerca.js
 
 import React from 'react';
-import '../Styles/Acerca.css'; 
+import '../Styles/Paginas/Acerca.css'; 
 import imagen from '../../Gorca.jpg'; 
 
 const Acerca = () => {

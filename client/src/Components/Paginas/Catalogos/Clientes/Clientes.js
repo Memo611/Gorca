@@ -22,19 +22,18 @@ function Clientes({ showForm, idUserEdit }) {
 
     // Definir las columnas de la tabla
     const columns = [
-        {
-            "idCliente": 0,
-            "rfc": "string",
-            "rSocial": "string",
-            "regFiscal": "string",
-            "cfdi": "string",
-            "calle": "string",
-            "dirNumero": 0,
-            "dirColonia": "string",
-            "dirCiudad": "string",
-            "cp": 0,
-            "dirPais": "string"
-        }
+        {name: "idCliente", label:"ID"},
+        {name: "rfc", label:"RFC"},
+        {name: "rSocial", label:"Razon Social"},
+        {name: "regFiscal", label:"Registro Fiscal"},
+        {name: "cfdi", label:"CFDI"},
+        {name: "calle", label:"Calle"},
+        {name: "dirNumero", label:"Direccion"},
+        {name: "dirColonia", label:"Colonia"},
+        {name: "dirCiudad", label:"Ciudad"},
+        {name: "cp", label:"CP"},
+        {name: "dirPais", label:"Pais"},
+
     ];
 
     const options = {

@@ -3919,24 +3919,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/eduardocamacho/.nuget/packages/": {}
+    "C:\\Users\\memo7\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/eduardocamacho/GORCA/API/API.csproj",
+      "projectUniqueName": "D:\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "/Users/eduardocamacho/GORCA/API/API.csproj",
-      "packagesPath": "/Users/eduardocamacho/.nuget/packages/",
-      "outputPath": "/Users/eduardocamacho/GORCA/API/obj/",
+      "projectPath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\memo7\\.nuget\\packages\\",
+      "outputPath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/eduardocamacho/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\memo7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3949,6 +3951,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3993,7 +4000,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.408/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
       }
     }
   }

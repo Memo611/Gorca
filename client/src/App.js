@@ -7,7 +7,7 @@ import Inicio  from './Components/Paginas/Inicio.js';
 
 import Powerade from './Components/Paginas/Catalogo/Powerade.js';
 import Fanta from './Components/Paginas/Catalogo/Fanta.js';
-import Jumex from './Components/Paginas/Catalogo/Jumex.js';
+import Coca from './Components/Paginas/Catalogo/Coca.js';
 
 import Promocion10 from './Components/Paginas/Promociones/DiesPorciento.js';
 import Promocion20 from './Components/Paginas/Promociones/VeintePorciento.js';
@@ -17,6 +17,8 @@ import Promocion4x3 from './Components/Paginas/Promociones/CuatroxTres.js'
 import Sucursal from './Components/Paginas/Sucursales/Sucursales.js';
 import Acerca from './Components/Paginas/Acerca.js';
 import Sucursales from './Components/Paginas/Sucursales/Sucursales.js'; 
+
+import Clientes from './Components/Paginas/Catalogos/Clientes/Clientes.js'
 
 const links = [
   {
@@ -37,7 +39,7 @@ const links = [
       subLinks:[
         { name: 'Powerade', href: '/catalogo/Powerade' },
         { name: 'Fanta', href: '/catalogo/Fanta' },
-        { name: 'Jumex', href: '/catalogo/Jumex' },
+        { name: 'Coca', href: '/catalogo/Coca' },
       ]
   },
   {
@@ -51,6 +53,14 @@ const links = [
       name: "Acerca",
       href: "/acerca",
   },
+  {
+    name: "Configuracion",
+    subLinks:[
+      { name: 'Clientes', href: '/configuracion/Clientes' },
+      { name: 'Productos', href: '/configuracion/Productos' },
+      { name: 'Empleados', href: '/configuracion/Empleados' },
+    ]
+  }
 ];
 
 function App() {
@@ -62,7 +72,7 @@ function App() {
           <Route path='/' element={<Inicio />} />
           <Route path='/catalogo/Powerade' element={<Powerade />} />
           <Route path='/catalogo/Fanta' element={<Fanta />} />
-          <Route path='/catalogo/Jumex' element={<Jumex />} />
+          <Route path='/catalogo/Coca' element={<Coca />} />
           <Route path='/promociones/10%' element={<Promocion10 />} />
           <Route path='/promociones/20%' element={<Promocion20 />} />
           <Route path='/promociones/2x1' element={<Promocion2x1 />} />
@@ -70,6 +80,7 @@ function App() {
           <Route path='/sucursales/Guaymas' element={<Sucursal />} />
           <Route path='/sucursales' element={<Sucursales />} />
           <Route path='/acerca' element={<Acerca />} />
+          <Route path='/configuracion/Clientes' element={<Clientes/>} />
           </Routes>
         </Router>
     </div>

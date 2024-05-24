@@ -37,7 +37,6 @@ const Fanta = () => {
         <img src={logo} alt="Fanta Logo" className="logo" />
         <br/>
         <br/>
-        <p className="subtitle">Mantente Hidratado, Mantente Fuerte</p>
         <p className="title">Sabores de Fanta México</p>
       </header>
       <div className="product-grid">

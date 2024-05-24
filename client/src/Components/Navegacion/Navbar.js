@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import '../Styles/Navegacion/Nav.css';
 import { Link } from 'react-router-dom';
 import Gorca from '../../Gorca.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Navbar = ({ links }) => {
     const [isAdmin, setIsAdmin] = useState(true); // Simulando que el admin ha iniciado sesión
+    const [cartItems, setCartItems] = useState([]); // Estado para los elementos del carrito
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,12 +47,16 @@ const Navbar = ({ links }) => {
                     </ul>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        <button className="btn btn-outline-success me-2" type="submit">Search</button>
                     </form>
+                    <button className="btn btn-outline-light me-2" type="button">
+                        <FontAwesomeIcon icon={faShoppingCart} />
+                        <span className="badge bg-secondary">{cartItems.length}</span>
+                    </button>
                     {isAdmin ? (
                         <div className="btn-group">
                             <button type="button" className="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin
+                                <FontAwesomeIcon icon={faUser} />
                             </button>
                             <ul className="dropdown-menu dropdown-menu-end">
                                 <li><Link className="dropdown-item" to="/admin/dashboard">Dashboard</Link></li>

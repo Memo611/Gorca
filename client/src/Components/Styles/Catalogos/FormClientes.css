@@ -1,0 +1,85 @@
+* {
+    font-size: 20px;
+    font-family: Tahoma;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    background-color: #1b1b32;
+    color: #f5f6f7;
+    font-size: 20px;
+    font-family: Tahoma;
+    justify-content: center;
+}
+
+.estilo.card {
+    width: 50em;
+    min-height: 2em;
+    margin-top: 10px;
+    border: none;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #1b1b32;
+    color: #ffffff;
+}
+
+.cuerpo.card-body {
+    border: none;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 5px;
+}
+
+.card-footer {
+    border: none;
+    padding: 5px;
+}
+
+.form-label {
+    display: block;
+    margin: 20px auto;
+}
+
+.form-control {
+    margin: 10px auto;
+    width: 100%;
+    min-height: 2em;
+    background-color: #25255a;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+}
+
+.form-control-cuerpo {
+    margin: 10px auto;
+    width: 100%;
+    border-radius: 5px;
+    min-height: 5em;
+    background-color: #25255a;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+    overflow-x: auto;
+}
+
+Button {
+    background-color: #0070c0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.boton:hover {
+    background-color: #0057a0;
+}
+
+.Grid {
+    padding: 20px;
+}

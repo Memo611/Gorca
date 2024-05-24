@@ -1,4 +1,5 @@
 import MUIDataTable from "mui-datatables";
+import '../../../Styles/Catalogos/FormClientes.css'
 import { Button } from 'react-bootstrap';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React, { useEffect, useRef } from "react";

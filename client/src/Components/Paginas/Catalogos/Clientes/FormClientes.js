@@ -10,20 +10,19 @@ import Swal from 'sweetalert2';
 
 function PrimerFormulario({ showForm, id }) {
     const initialUserState = {
-        IDUsuario: 0,
-        Nombre: '',
-        PrimerApellido: '',
-        SegundoApellido: '',
-        Genero: null,
-        Correo: '',
-        FechaNacimiento: '',
-        Telefono: '',
-        IDRol: 0,
-        NombreUsuario: '',
-        Contraseña: '',
-        ConfirmarContraseña: '',
-        Habilitado: true
+        idCliente:0,
+        rfc: '',
+        rSocial: '',
+        regFiscal:'',
+        cfdi:'',
+        calle:'',
+        dirNumero: 0,
+        dirColonia:'',
+        dirCiudad:'',
+        cp: 0,
+        dirPais:'',
     };
+
     const dispatch = useDispatch();
     const [user, setUser] = useState({ initialUserState });
 
@@ -41,7 +40,7 @@ function PrimerFormulario({ showForm, id }) {
         showForm();
     };
 
-    const handleGuardar = asyn () => {
+    const handleGuardar = async () => {
         if (user.Contraseña === user.ConfirmarContraseña) {
             try {
                 const respuesta = await dispatch(addUser(user)); // Suponiendo que addUser devuelve una promesa

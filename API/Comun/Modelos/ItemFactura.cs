@@ -12,7 +12,7 @@ public class ItemFactura
     public int NumCer { get; set; }
     public string ForPago { get; set; }
     public DateTime FecEmi { get; set; }
-    public TimeZone HoraEmi { get; set; }
+    public TimeSpan HoraEmi { get; set; }
     [Column(TypeName="money")]
     public decimal Subt { get; set; }
     public decimal IVA { get; set; }

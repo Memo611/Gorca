@@ -34,4 +34,6 @@ public class Producto
     
     public virtual Proveedores Proveedores { get; set; }
     public virtual Categoria Categoria { get; set; }
+    public virtual ICollection<Factura> Factura { get; set; }
+    public virtual ICollection<Ticket> Ticket { get; set; }
 }

@@ -1,4 +1,4 @@
-/*
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -22,7 +22,7 @@ public class TicketsController : ControllerBase
     [HttpGet]
     public IEnumerable<ItemTicket> Get()
     {
-        var listaTickets = (from t in _contexto.TicketVentas
+        var listaTickets = (from t in _contexto.Ticket
             where t.Habilitado == true
             select new ItemTicket()
             {
@@ -41,7 +41,7 @@ public class TicketsController : ControllerBase
     [HttpGet("{id}")]
     public ItemTicket Get(int id)
     {
-        var ticket = (from t in _contexto.TicketVentas
+        var ticket = (from t in _contexto.Ticket
             where t.ID_Ticket == id
             select new ItemTicket()
             {
@@ -66,7 +66,7 @@ public class TicketsController : ControllerBase
         var ticket = new Ticket();
         ticket.ID_Ticket = nuevoTicket.idTicket;
 
-        _contexto.TicketVentas.Add(ticket);
+        _contexto.Ticket.Add(ticket);
         _contexto.SaveChanges();
 
         return Ok();
@@ -76,7 +76,7 @@ public class TicketsController : ControllerBase
     [HttpPut("{id}")]
     public ActionResult Put(int id, [FromBody] ItemTicket ticket)
     {
-        var ticketModificar = _contexto.TicketVentas.Find(id);
+        var ticketModificar = _contexto.Ticket.Find(id);
 
         if (ticket == null)
             return BadRequest();
@@ -91,7 +91,7 @@ public class TicketsController : ControllerBase
     [HttpDelete("{id}")]
     public ActionResult Delete(int id)
     {
-        var ticket = _contexto.TicketVentas.Find(id);
+        var ticket = _contexto.Ticket.Find(id);
 
         if(ticket != null)
             ticket.Habilitado = !ticket.Habilitado;
@@ -101,4 +101,3 @@ public class TicketsController : ControllerBase
         return Ok();
     }
 }
-*/

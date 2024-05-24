@@ -15,7 +15,7 @@ public class Factura
     public int Num_certif { get; set; }
     public string Forma_Pago { get; set; }
     public DateTime Fecha_Emision_Fac { get; set; }
-    public TimeZone Hora_Emision_Fac { get; set; }
+    public TimeSpan Hora_Emision_Fac { get; set; }
     [Column(TypeName="money")]
     public decimal Subtotal_Fac { get; set; }
     public decimal IVA_Fac { get; set; }
@@ -25,9 +25,10 @@ public class Factura
     public bool Habilitado { get; set; }
     
     //LLAVES FORANEAS
-    public string ID_Cli { get; set; }
-    public string ID_Gorca { get; set; }
+    public int ID_Cli { get; set; }
+    public int ID_Gorca { get; set; }
     public virtual Clientes Clientes { get; set; }
     public virtual gorca Gorca { get; set; }
+    public virtual ICollection<Producto> Producto { get; set; }
 }
 

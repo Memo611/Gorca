@@ -12,15 +12,17 @@ namespace API.Comun.Interfaz
         public DbSet<Proveedores> Proveedores { get; set; }
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Factura> Factura { get; set; }
-        /*
+        public DbSet<Ticket> Ticket { get; set; }
         public DbSet<Det_Fac> DetalleFactura { get; set; }
+        /*
+        
         public DbSet<Det_Tick> DetalleTickets { get; set; }
         
         
         
         
         
-        public DbSet<Ticket> TicketVentas { get; set; }
+        
         */
         
         Task<int> SaveChangesAsync(CancellationToken cancelacionToken);

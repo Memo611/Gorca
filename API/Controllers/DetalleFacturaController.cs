@@ -1,4 +1,4 @@
-/*
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -101,4 +101,3 @@ public class DetFacController : ControllerBase
         return Ok();
     }
 }
-*/

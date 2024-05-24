@@ -1,4 +1,4 @@
-/*
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlTypes;
@@ -20,8 +20,7 @@ public class Det_Fac
     //LLAVES FORANEAS
     public int Folio { get; set; }
     public int ID_Prod { get; set; }
-    public ICollection<Producto> Producto { get; set; }
-    public ICollection<Factura> Facturas { get; set; }
+    public Producto Producto { get; set; }
+    public Factura Factura { get; set; }
 
 }
-*/

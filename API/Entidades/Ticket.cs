@@ -1,4 +1,4 @@
-/*
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlTypes;
@@ -10,8 +10,8 @@ public class Ticket
 {
     [Key]
     public int ID_Ticket { get; set; }
-    public JSType.Date Fecha_Emision_Tic { get; set; }
-    public TimeOnly Hora_Emision_Tic { get; set; }
+    public DateTime Fecha_Emision_Tic { get; set; }
+    public TimeSpan Hora_Emision_Tic { get; set; }
     [Column(TypeName="money")]
     public decimal Subtotal_Tic { get; set; }
     public decimal IVA_Tic { get; set; }
@@ -26,4 +26,3 @@ public class Ticket
     public virtual Empleado Empleado { get; set; }
     public virtual gorca Gorca { get; set; }
 }
-*/

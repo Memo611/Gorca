@@ -1,4 +1,4 @@
-
+/*
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using API.Entidades;
@@ -39,3 +39,4 @@ namespace API.Persistencia.Configuracion
         }
     }
 }
+*/

@@ -4,11 +4,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { addUser, getUserUnique } from '../../../../Redux/Actions/Actions.js';
 import { useDispatch } from 'react-redux';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
 
-function PrimerFormulario({ showForm, id }) {
+function FormClientes({ showForm, id }) {
     const initialUserState = {
         idCliente:0,
         rfc: '',
@@ -68,154 +67,110 @@ function PrimerFormulario({ showForm, id }) {
     return (
         <Row sm={7}>
             <Card className='estilo'>
-                <CardHeader className='Titulo'> Registro de Usuario </CardHeader>
+                <CardHeader className='Titulo'> Registro de Cliente </CardHeader>
 
                 <CardBody className='cuerpo'>
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='nombre'>Nombre: </Form.Label>
+                            <Form.Label htmlFor='rfc'> RFC </Form.Label>
                         </Col>
                         <Col>
-                            <input type="text" id="nombre" name='nombre' className='form-control' required value={user.Nombre}
-                                onChange={(e) => setUser({ ...user, Nombre: e.target.value })} />
+                            <input type="text" id="rfc" name='rfc' className='form-control' required value={user.rfc}
+                                onChange={(e) => setUser({ ...user, rfc: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='primerApellido'>Primer Apellido: </Form.Label>
+                            <Form.Label htmlFor='rSocial'>Razon Social: </Form.Label>
                         </Col>
                         <Col>
-                            <input type="text" id="primerApellido" name='primerApellido' className='form-control' required value={user.PrimerApellido}
-                                onChange={(e) => setUser({ ...user, PrimerApellido: e.target.value })} />
+                            <input type="text" id="rSocial" name='rSocial' className='form-control' required value={user.rSocial}
+                                onChange={(e) => setUser({ ...user, rSocial: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='segundoApellido'>Segundo Apellido: </Form.Label>
+                            <Form.Label htmlFor='regFiscal'>Registro Fiscal: </Form.Label>
                         </Col>
                         <Col>
-                            <input type="text" id="segundoApellido" name='segundoApellido' className='form-control' required value={user.SegundoApellido}
-                                onChange={(e) => setUser({ ...user, SegundoApellido: e.target.value })} />
+                            <input type="text" id="regFiscal" name='regFiscal' className='form-control' required value={user.regFiscal}
+                                onChange={(e) => setUser({ ...user, regFiscal: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='genero'>Genero: </Form.Label>
+                            <Form.Label htmlFor='cfdi'>CFDI: </Form.Label>
                         </Col>
                         <Col>
-                            <Form.Select
-                                name="genero"
-                                id='genero'
-                                value={user.Genero} // Usa el valor del estado
-                                onChange={(e) => setUser({ ...user, Genero: e.target.value })}
-                            >
-                                <option value={""} disabled>Seleccione un Genero</option>
-                                <option value={"Masculino"}>Masculino</option>
-                                <option value={"Femenino"}>Femenino</option>
-                            </Form.Select>
+                            <input type="text" id="cfdi" name='cfdi' className='form-control' required value={user.cfdi}
+                                onChange={(e) => setUser({ ...user, cfdi: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='fechaNacimiento'>Fecha de Nacimiento: </Form.Label>
+                            <Form.Label htmlFor='calle'>Calle: </Form.Label>
                         </Col>
                         <Col>
-                            <DatePicker
-                                name='fechaNacimiento'
-                                id='fechaNacimiento'
-                                className='form-control'
-                                selected={user.FechaNacimiento}
-                                onChange={(date) => setUser({ ...user, FechaNacimiento: date })}
-                            />
+                            <input type="text" id="calle" name='calle' className='form-control' required value={user.calle}
+                                onChange={(e) => setUser({ ...user, calle: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='correo'>Correo: </Form.Label>
+                            <Form.Label htmlFor='dirNumero'>Numero: </Form.Label>
                         </Col>
                         <Col>
-                            <input type='text'
-                                name="correo"
-                                id='correo'
-                                value={user.Correo}
-                                onChange={(e) => setUser({ ...user, Correo: e.target.value })}
-                                required
-                            />
+                            <input type="text" id="dirNumero" name='dirNumero' className='form-control' required value={user.dirNumero}
+                                onChange={(e) => setUser({ ...user, dirNumero: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='telefono'>Telefono: </Form.Label>
+                            <Form.Label htmlFor='dirColonia'>Colonia:  </Form.Label>
                         </Col>
                         <Col>
-                            <input
-                                type='text'
-                                name="telefono"
-                                id='telefono'
-                                value={user.Telefono}
-                                onChange={(e) => setUser({ ...user, Telefono: e.target.value })}
-                                required
-                            />
+                            <input type="text" id="dirColonia" name='dirColonia' className='form-control' required value={user.dirColonia}
+                                onChange={(e) => setUser({ ...user, dirColonia: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='idRol'>Rol: </Form.Label>
+                            <Form.Label htmlFor='dirCiudad'>Ciudad:  </Form.Label>
                         </Col>
                         <Col>
-                            <Form.Select
-                                name="idRol"
-                                id='idRol'
-                                value={user.IDRol}
-                                onChange={(e) => setUser({ ...user, IDRol: parseInt(e.target.value) })}>
-                                <option value={"0"} disabled>Seleccione un Rol</option>
-                                <option value={"1"}>Administrador</option>
-                                <option value={"2"}>Usuario</option>
-                            </Form.Select>
+                            <input type="text" id="dirCiudad" name='dirCiudad' className='form-control' required value={user.dirCiudad}
+                                onChange={(e) => setUser({ ...user, dirCiudad: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='nombreUsuario'>Nombre de Usuario: </Form.Label>
+                            <Form.Label htmlFor='cp'>CP:  </Form.Label>
                         </Col>
                         <Col>
-                            <input type="text"
-                                name="nombreUsuario"
-                                id='nombreUsuario'
-                                value={user.NombreUsuario}
-                                onChange={(e) => setUser({ ...user, NombreUsuario: e.target.value })} />
+                            <input type="text" id="cp" name='cp' className='form-control' required value={user.cp}
+                                onChange={(e) => setUser({ ...user, cp: e.target.value })} />
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Label htmlFor='contraseña'>Contraseña: </Form.Label>
+                            <Form.Label htmlFor='dirPais'>Pais:  </Form.Label>
                         </Col>
                         <Col>
-                            <input type={'password'} id="contraseña" name='contraseña' className='form-control'
-                                value={user.Contraseña} onChange={(e) => setUser({ ...user, Contraseña: e.target.value })}
-                            />
+                            <input type="text" id="dirPais" name='dirPais' className='form-control' required value={user.dirPais}
+                                onChange={(e) => setUser({ ...user, dirPais: e.target.value })} />
                         </Col>
                     </Row>
 
-                    <Row>
-                        <Col>
-                            <Form.Label htmlFor='confirmarcontraseña'>Confirmar Contraseña: </Form.Label>
-                        </Col>
-                        <Col>
-                            <input type={'password'} id="confirmarcontraseña" name='confirmarcontraseña' className='form-control'
-                                value={user.ConfirmarContraseña} onChange={(e) => setUser({ ...user, ConfirmarContraseña: e.target.value })}
-                            />
-                        </Col>
-                    </Row>
+                    
                 </CardBody>
 
                 <CardFooter>
@@ -229,4 +184,4 @@ function PrimerFormulario({ showForm, id }) {
     );
 }
 
-export default PrimerFormulario;
+export default FormClientes;

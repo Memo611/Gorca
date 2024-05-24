@@ -4,21 +4,21 @@
     justify-content: center;
 }
 
-
 .estilo.card {
     width: 50em;
     min-height: 2em;
     margin-top: 10px;
     border: none;
     border: 2px solid rgb(255, 255, 255);
-    background-color: #1b1b32;
-    color: #ffffff;
+    background-color: #b1b1c7;
+    color: #000000;
 }
 
 .cuerpo.card-body {
     border: none;
     border-top: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
+    background-color: #b1b1c7;
     padding: 5px;
 }
 
@@ -30,6 +30,7 @@
 .form-label {
     display: block;
     margin: 20px auto;
+    align-items: center;
 }
 
 .form-control {
@@ -38,7 +39,7 @@
     min-height: 2em;
     /*background-color: #25255a;*/
     border: 1px solid #0a0a23;
-    color: #ffffff;
+    color: #000000;
 }
 
 .form-control-cuerpo {

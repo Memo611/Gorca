@@ -5,7 +5,7 @@ export const getUsers = createAsyncThunk("users/getUsers",
     async () => {
         try
         {      
-            const resp = await axios.get('https://localhost:7180/api/Clientes');
+            const resp = await axios.get('http://187.189.158.186:7777/Usuario');
 
             return resp.data;
         } 

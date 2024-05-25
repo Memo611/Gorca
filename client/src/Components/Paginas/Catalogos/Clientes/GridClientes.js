@@ -1,18 +1,21 @@
-import MUIDataTable from "mui-datatables";
-import '../../../Styles/Catalogos/FormClientes.css'
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from 'react-bootstrap';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import React, { useEffect, useRef } from "react";
+import MUIDataTable from "mui-datatables";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers, deleteUser } from "../../../../Redux/Actions/Actions.js";
 import Swal from 'sweetalert2';
+import FormClientes from './FormClientes';
+import '../../../Styles/Catalogos/FormClientes.css';
 
 function Clientes({ showForm, idUserEdit }) {
     const dispatch = useDispatch();
-    const { users } = useSelector((state) => state.getUsers); // Acceder a los datos del usuario
-    const [userSelected, setUserSelected] = React.useState(false);
-    const [selectedRowIds, setSelectedRowIds] = React.useState([]);
-    const tableRef = useRef(null); // Referencia a la tabla MUIDataTable
+    const { users } = useSelector((state) => state.getUsers);
+    const [userSelected, setUserSelected] = useState(false);
+    const [selectedRowIds, setSelectedRowIds] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [formId, setFormId] = useState(0);
+    const tableRef = useRef(null);
 
     const darkTheme = createTheme({
         palette: {
@@ -20,58 +23,44 @@ function Clientes({ showForm, idUserEdit }) {
         },
     });
 
-
-    // Definir las columnas de la tabla
     const columns = [
-        {name: "idCliente", label:"ID"},
-        {name: "rfc", label:"RFC"},
-        {name: "rSocial", label:"Razon Social"},
-        {name: "regFiscal", label:"Registro Fiscal"},
-        {name: "cfdi", label:"CFDI"},
-        {name: "calle", label:"Calle"},
-        {name: "dirNumero", label:"Direccion"},
-        {name: "dirColonia", label:"Colonia"},
-        {name: "dirCiudad", label:"Ciudad"},
-        {name: "cp", label:"CP"},
-        {name: "dirPais", label:"Pais"},
+        { name: "idCliente", label: "ID" },
+        { name: "rfc", label: "RFC" },
+        { name: "rSocial", label: "Razon Social" },
+        { name: "regFiscal", label: "Registro Fiscal" },
+        { name: "cfdi", label: "CFDI" },
+        { name: "calle", label: "Calle" },
+        { name: "dirNumero", label: "Direccion" },
+        { name: "dirColonia", label: "Colonia" },
+        { name: "dirCiudad", label: "Ciudad" },
+        { name: "cp", label: "CP" },
+        { name: "dirPais", label: "Pais" },
     ];
 
     const options = {
         filterType: 'checkbox',
-    };
-
-    const onSelectionChange = (event) => {
-        const selectedRows = event.data.selectedRows;
-        // Actualiza selectedRowIds con los IDs de las filas seleccionadas
-        setSelectedRowIds(selectedRows.map((row) => row.idUsuario));
-        setUserSelected(selectedRows.length > 0); // Establece userSelected en true si hay filas seleccionadas
-        if (selectedRows.length > 0) {
-            idUserEdit(selectedRows[0].idUsuario); // Establece el ID del usuario para editar (asumiendo que solo se puede editar un usuario a la vez)
-        }
+        onRowSelectionChange: (currentRowsSelected, allRowsSelected, rowsSelected) => {
+            setSelectedRowIds(allRowsSelected.map(row => users[row.index]?.idCliente));
+            setUserSelected(allRowsSelected.length > 0);
+            if (allRowsSelected.length > 0) {
+                idUserEdit(users[allRowsSelected[0].index]?.idCliente);
+            }
+        },
     };
 
     useEffect(() => {
         dispatch(getUsers());
-        if (users) {
-            users.map((dataItem) =>
-                Object.assign(
-                    {
-                        selected: false,
-                    },
-                    dataItem
-                )
-            );
-        }
     }, [dispatch]);
 
     const handleNew = () => {
-        showForm(); // Suponiendo que `showForm` está definida y abre el formulario para crear un nuevo usuario
-        idUserEdit(0); // Establecer el ID de usuario a 0 para indicar un nuevo usuario
+        setFormId(0);
+        setShowModal(true);
     };
 
     const handleEdit = () => {
         if (userSelected) {
-            showForm(); // Abrir formulario para editar
+            setFormId(selectedRowIds[0]);
+            setShowModal(true);
         } else {
             Swal.fire({
                 icon: "error",
@@ -83,7 +72,7 @@ function Clientes({ showForm, idUserEdit }) {
 
     const handleDelete = () => {
         if (userSelected) {
-            const idUserDelete = selectedRowIds[0]; // Usa el primer ID de selectedRowIds para eliminar
+            const idUserDelete = selectedRowIds[0];
             dispatch(deleteUser(idUserDelete)).then(() => {
                 Swal.fire({
                     icon: "success",
@@ -103,7 +92,10 @@ function Clientes({ showForm, idUserEdit }) {
         }
     };
 
-    // Renderizamos la Tabla
+    const handleClose = () => {
+        setShowModal(false);
+    };
+
     return (
         <>
             <div className="Botones">
@@ -114,18 +106,13 @@ function Clientes({ showForm, idUserEdit }) {
             <ThemeProvider theme={darkTheme}>
                 <MUIDataTable
                     title={"Lista de Usuarios"}
-                    data={users}
+                    data={users || []}
                     columns={columns}
                     options={options}
                     ref={tableRef}
-                    selectable={{
-                        enabled: true,
-                        drag: true,
-                        mode: "single",
-                    }}
-                    onSelectionChange={onSelectionChange}
                 />
             </ThemeProvider>
+            <FormClientes showModal={showModal} handleClose={handleClose} id={formId} showForm={() => setShowModal(false)} />
         </>
     );
 }

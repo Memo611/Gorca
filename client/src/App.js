@@ -19,6 +19,7 @@ import Acerca from './Components/Paginas/Acerca.js';
 import Sucursales from './Components/Paginas/Sucursales/Sucursales.js'; 
 
 import Clientes from './Components/Paginas/Catalogos/Clientes/Clientes.js'
+import FormClientes from './Components/Paginas/Catalogos/Clientes/FormClientes.js'
 
 const links = [
   {
@@ -60,7 +61,7 @@ const links = [
       { name: 'Productos', href: '/configuracion/Productos' },
       { name: 'Empleados', href: '/configuracion/Empleados' },
     ]
-  }
+  },
 ];
 
 function App() {

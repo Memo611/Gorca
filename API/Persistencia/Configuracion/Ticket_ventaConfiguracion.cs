@@ -1,4 +1,4 @@
-/*
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using API.Entidades;
@@ -18,25 +18,24 @@ namespace API.Persistencia.Configuracion
                 .HasForeignKey(fe => fe.ID_Gorca);
             builder
                 .HasMany(p => p.Producto)
-                .WithMany(f => f.)
-                .UsingEntity<Det_Fac>(
+                .WithMany(f => f.Ticket)
+                .UsingEntity<Det_Tick>(
                     r => r
                         .HasOne<Producto>(df => df.Producto)
                         .WithMany()
                         .HasForeignKey("ID_Prod")
                         .HasPrincipalKey(nameof(Producto.ID_Prod)),
                     j => j
-                        .HasOne<Factura>(df => df.Factura)
+                        .HasOne<Ticket>(df => df.Ticket)
                         .WithMany()
-                        .HasForeignKey("Folio")
-                        .HasPrincipalKey(nameof(Factura.Folio)),
+                        .HasForeignKey("ID_Ticket")
+                        .HasPrincipalKey(nameof(Ticket.ID_Ticket)),
                     r =>
                     {
-                        r.HasKey(df => new { df.ID_Prod, df.Folio });
-                        r.ToTable("Det_Fac");
+                        r.HasKey(df => new { df.ID_Prod, df.ID_Ticket });
+                        r.ToTable("Det_Tick");
                     }
                 );
         }
     }
 }
-*/

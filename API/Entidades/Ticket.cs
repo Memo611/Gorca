@@ -25,4 +25,5 @@ public class Ticket
     public int ID_Gorca { get; set; }
     public virtual Empleado Empleado { get; set; }
     public virtual gorca Gorca { get; set; }
+    public virtual ICollection<Producto> Producto { get; set; }
 }

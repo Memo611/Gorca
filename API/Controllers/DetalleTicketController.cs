@@ -1,4 +1,4 @@
-/*
+
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
@@ -101,4 +101,3 @@ public class DetTicketController : ControllerBase
         return Ok();
     }
 }
-*/

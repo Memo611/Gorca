@@ -14,8 +14,6 @@ namespace API.Comun.Interfaz
         public DbSet<Factura> Factura { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
         public DbSet<Det_Fac> DetalleFactura { get; set; }
-        /*
-        
         public DbSet<Det_Tick> DetalleTickets { get; set; }
         
         
@@ -23,7 +21,7 @@ namespace API.Comun.Interfaz
         
         
         
-        */
+        
         
         Task<int> SaveChangesAsync(CancellationToken cancelacionToken);
         int SaveChanges();

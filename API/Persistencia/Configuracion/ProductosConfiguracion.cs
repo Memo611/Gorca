@@ -36,11 +36,11 @@ namespace API.Persistencia.Configuracion
                         j.ToTable("Det_Fac");
                     }
                 );
-            /*
+            
             builder
                 .HasMany(p => p.Ticket)
                 .WithMany(f => f.Producto)
-                .UsingEntity<Det_Fac>(
+                .UsingEntity<Det_Tick>(
                     r => r
                         .HasOne<Ticket>(df => df.Ticket)
                         .WithMany()
@@ -53,10 +53,10 @@ namespace API.Persistencia.Configuracion
                         .HasPrincipalKey(nameof(Producto.ID_Prod)),
                     j =>
                     {
-                        j.HasKey(df => new { df.ID_Prod, df.Folio });
-                        j.ToTable("Det_Fac");
+                        j.HasKey(df => new { df.ID_Prod, df.ID_Ticket });
+                        j.ToTable("Det_Tick");
                     }
-                );*/
+                );
         }
     }
 }

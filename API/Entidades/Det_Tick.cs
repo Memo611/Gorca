@@ -1,4 +1,4 @@
-/*
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlTypes;
@@ -19,7 +19,6 @@ public class Det_Tick
     //LLAVES FORANEAS
     public int ID_Prod { get; set; }
     public int ID_Ticket { get; set; }
-    public ICollection<Ticket> Ticket { get; set; }
-    public ICollection<Producto> Producto { get; set; }
+    public Ticket Ticket { get; set; }
+    public Producto Producto { get; set; }
 }
-*/

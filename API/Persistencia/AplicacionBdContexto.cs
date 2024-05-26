@@ -23,8 +23,6 @@ namespace API.Persistencia
         public DbSet<Factura> Factura { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
         public DbSet<Det_Fac> DetalleFactura { get; set; }
-        /*
-        
         public DbSet<Det_Tick> DetalleTickets { get; set; }
         
        
@@ -32,7 +30,6 @@ namespace API.Persistencia
         
         
         
-        */
         public override async Task<int> SaveChangesAsync(CancellationToken cancelacionToken = default)
         {
             var resultado = await base.SaveChangesAsync(cancelacionToken);

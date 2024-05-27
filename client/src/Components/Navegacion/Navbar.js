@@ -9,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Navbar = ({ links }) => {
     const [isAdmin, setIsAdmin] = useState(true); // Simulando que el admin ha iniciado sesión
-    const [cartItems, setCartItems] = useState([]); // Estado para los elementos del carrito
+    const [cartItems] = useState([]); // Estado para los elementos del carrito
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

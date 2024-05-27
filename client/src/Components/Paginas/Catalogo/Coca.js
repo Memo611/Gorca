@@ -1,30 +1,30 @@
 import React from 'react';
 import '../../Styles/Paginas/Catalogo/Coca.css';
-import naranja from '../../../Constants/Fanta/naranja.webp'
-import Uva from '../../../Constants/Fanta/Uva.webp'
-import fresa from '../../../Constants/Fanta/fresa.webp'
-import logo from '../../../Constants/Fanta/logo-fanta.webp'
+import DosLitros from '../../../Constants/Coca/Coca2l.webp'
+import Treslitros from '../../../Constants/Coca/Coca3l.webp'
+import DosLitrosymedio from '../../../Constants/Coca/coca25l.webp'
+import logo from '../../../Constants/Coca/Coca.webp'
 import { Button } from 'react-bootstrap';
 
 const products = [
   {
     name: "Coca-Cola 2L",
-    description: "Refresco Fanta Sabor Naranja 600 ml PET 12U HARMONY",
-    imgSrc: naranja, 
+    description: "Refresco Coca-Cola 2L",
+    imgSrc: DosLitros, 
     href: "#",
     nutrition: "#",
   },
   {
     name: "Coca-Cola 3L",
-    description: "Refresco Fanta Sabor Uva 600 ml PET 12U HARMONY",
-    imgSrc: Uva, 
+    description: "Refresco Coca-Cola 3L",
+    imgSrc: Treslitros, 
     href: "#",
     nutrition: "#",
   },
   {
-    name: "Coca-Cola 1L",
-    description: "Refresco Fanta Sabor Fresa 600 ml PET 12U HARMONY",
-    imgSrc: fresa, 
+    name: "Coca-Cola 2.5L",
+    description: "Refresco Coca-Cola 2.5L",
+    imgSrc: DosLitrosymedio, 
     href: "#",
     nutrition: "#",
   },

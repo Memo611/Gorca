@@ -19,7 +19,7 @@ import Acerca from './Components/Paginas/Acerca.js';
 import Sucursales from './Components/Paginas/Sucursales/Sucursales.js'; 
 
 import Clientes from './Components/Paginas/Catalogos/Clientes/Clientes.js'
-import FormClientes from './Components/Paginas/Catalogos/Clientes/FormClientes.js'
+import Empleados from './Components/Paginas/Catalogos/Empleados/Empleados.js'
 
 const links = [
   {
@@ -81,7 +81,8 @@ function App() {
           <Route path='/sucursales/Guaymas' element={<Sucursal />} />
           <Route path='/sucursales' element={<Sucursales />} />
           <Route path='/acerca' element={<Acerca />} />
-          <Route path='/configuracion/Clientes' element={<Clientes/>} />
+          <Route path='/configuracion/Clientes' element={<Clientes/>}/>
+          <Route path='/configuracion/Empleados' element={<Empleados/>}/>
           </Routes>
         </Router>
     </div>

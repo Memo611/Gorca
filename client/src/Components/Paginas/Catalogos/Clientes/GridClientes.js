@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import FormClientes from './FormClientes';
 import '../../../Styles/Catalogos/FormClientes.css';
 
-function Clientes({ showForm, idUserEdit }) {
+function Clientes({ idUserEdit }) {
     const dispatch = useDispatch();
     const { users } = useSelector((state) => state.getUsers);
     const [userSelected, setUserSelected] = useState(false);
@@ -105,7 +105,7 @@ function Clientes({ showForm, idUserEdit }) {
             </div>
             <ThemeProvider theme={darkTheme}>
                 <MUIDataTable
-                    title={"Lista de Usuarios"}
+                    title={"Lista de Clientes"}
                     data={users || []}
                     columns={columns}
                     options={options}

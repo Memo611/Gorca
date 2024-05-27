@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\comun\\interfaz\\iaplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:comun\\interfaz\\iaplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\persistencia\\aplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:persistencia\\aplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-26T05:37:48.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AplicacionBdContexto.cs",
+              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\AplicacionBdContexto.cs",
+              "RelativeDocumentMoniker": "Persistencia\\AplicacionBdContexto.cs",
+              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\AplicacionBdContexto.cs",
+              "RelativeToolTip": "Persistencia\\AplicacionBdContexto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T05:02:58.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-25T00:21:28.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IAplicacionBdContexto.cs",
+              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Interfaz\\IAplicacionBdContexto.cs",
+              "RelativeDocumentMoniker": "Comun\\Interfaz\\IAplicacionBdContexto.cs",
+              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Interfaz\\IAplicacionBdContexto.cs",
+              "RelativeToolTip": "Comun\\Interfaz\\IAplicacionBdContexto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T00:21:54.626Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,7 @@ namespace API.Comun
         public int DirNumero { get; set; }
         public string DirColonia { get; set; }
         public string DirCiudad { get; set; }
-        public int CP { get; set; }
+        public string CP { get; set; }
         public string DirPais { get; set; }
     }
 }

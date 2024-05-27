@@ -22,10 +22,10 @@ public class ClientesController : ControllerBase
     public IEnumerable<itemCliente> Get()
     {
         var listaClientes = (from c in _contexto.Clientes
-            where c.Habilitado == true
             select new itemCliente
             {
                 idCliente = c.ID_Cli,
+                RFC = c.RFC_Cli,
                 RSocial = c.Razon_Social_Cli,
                 RegFiscal = c.Regimen_Fiscal_Cli,
                 CFDI = c.Uso_CFDI_Cli,

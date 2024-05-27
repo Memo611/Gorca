@@ -14,7 +14,7 @@ public class Clientes
     public int Numero_Cli { get; set; }
     public string Colonia_Cli { get; set; }
     public string Ciudad_Cli { get; set; }
-    public int CP_Cli { get; set; }
+    public string CP_Cli { get; set; }
     public string Pais_Cli { get; set; }
     
     public bool Habilitado { get; set; }

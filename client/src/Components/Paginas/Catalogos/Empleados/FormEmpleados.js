@@ -9,42 +9,42 @@ import Swal from 'sweetalert2';
 
 function FormClientes({ showForm, id, showModal, handleClose}) {
     const initialUserState = {
-        idCliente: 0,
-        rfc: '',
-        rSocial: '',
-        regFiscal: '',
-        cfdi: '',
-        calle: '',
-        dirNumero: 0,
-        dirColonia: '',
-        dirCiudad: '',
-        cp: 0,
-        dirPais: '',
+        idEmp: 0,
+        Rfc: '',
+        Curp: '',
+        NomEmp: '',
+        ApeP: '',
+        ApeM: '',
+        Naci: 0,
+        NumSoci: '',
+        PuestEmp: '',
+        SalEmp: 0,
+        Contrat: '',
     };
 
     const dispatch = useDispatch();
-    const [user, setUser] = useState({ initialUserState });
+    const [employee, setEmployeed] = useState({ initialUserState });
 
     useEffect(() => {
         if (id > 0) {
             dispatch(getUserUnique(id))
                 .then((response) => {
-                    setUser(response.payload);
+                    setEmployeed(response.payload);
                 });
         }
     }, [dispatch, id]);
 
     const handleCancel = () => {
-        setUser(initialUserState);
+        setEmployeed(initialUserState);
         showForm();
     };
 
     const handleGuardar = async () => {
-        if (user.Contraseña === user.ConfirmarContraseña) {
+        if (employee.Contraseña === employee.ConfirmarContraseña) {
             try {
-                const respuesta = await dispatch(addUser(user)); // Suponiendo que addUser devuelve una promesa
+                const respuesta = await dispatch(addUser(employee)); // Suponiendo que addUser devuelve una promesa
                 console.log('Usuario guardado:', respuesta); // Registra la respuesta para depurar
-                setUser(initialUserState); // Limpia el formulario después del envío exitoso
+                setEmployeed(initialUserState); // Limpia el formulario después del envío exitoso
             } catch (error) {
                 Swal.fire({
                     icon: "error",
@@ -80,8 +80,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='rfc'> RFC </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="rfc" name='rfc' className='form-control' required value={user.rfc}
-                                        onChange={(e) => setUser({ ...user, rfc: e.target.value })} />
+                                    <input type="text" id="rfc" name='rfc' className='form-control' required value={employee.rfc}
+                                        onChange={(e) => setEmployeed({ ...employee, rfc: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -90,8 +90,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='rSocial'>Razon Social: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="rSocial" name='rSocial' className='form-control' required value={user.rSocial}
-                                        onChange={(e) => setUser({ ...user, rSocial: e.target.value })} />
+                                    <input type="text" id="rSocial" name='rSocial' className='form-control' required value={employee.rSocial}
+                                        onChange={(e) => setEmployeed({ ...employee, rSocial: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -100,8 +100,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='regFiscal'>Registro Fiscal: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="regFiscal" name='regFiscal' className='form-control' required value={user.regFiscal}
-                                        onChange={(e) => setUser({ ...user, regFiscal: e.target.value })} />
+                                    <input type="text" id="regFiscal" name='regFiscal' className='form-control' required value={employee.regFiscal}
+                                        onChange={(e) => setEmployeed({ ...employee, regFiscal: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -110,8 +110,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='cfdi'>CFDI: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="cfdi" name='cfdi' className='form-control' required value={user.cfdi}
-                                        onChange={(e) => setUser({ ...user, cfdi: e.target.value })} />
+                                    <input type="text" id="cfdi" name='cfdi' className='form-control' required value={employee.cfdi}
+                                        onChange={(e) => setEmployeed({ ...employee, cfdi: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -120,8 +120,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='calle'>Calle: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="calle" name='calle' className='form-control' required value={user.calle}
-                                        onChange={(e) => setUser({ ...user, calle: e.target.value })} />
+                                    <input type="text" id="calle" name='calle' className='form-control' required value={employee.calle}
+                                        onChange={(e) => setEmployeed({ ...employee, calle: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -130,8 +130,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='dirNumero'>Numero: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="number" id="dirNumero" name='dirNumero' className='form-control' required value={user.dirNumero}
-                                        onChange={(e) => setUser({ ...user, dirNumero: e.target.value })} />
+                                    <input type="number" id="dirNumero" name='dirNumero' className='form-control' required value={employee.dirNumero}
+                                        onChange={(e) => setEmployeed({ ...employee, dirNumero: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -140,8 +140,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='dirColonia'>Colonia:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirColonia" name='dirColonia' className='form-control' required value={user.dirColonia}
-                                        onChange={(e) => setUser({ ...user, dirColonia: e.target.value })} />
+                                    <input type="text" id="dirColonia" name='dirColonia' className='form-control' required value={employee.dirColonia}
+                                        onChange={(e) => setEmployeed({ ...employee, dirColonia: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -150,8 +150,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='dirCiudad'>Ciudad:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirCiudad" name='dirCiudad' className='form-control' required value={user.dirCiudad}
-                                        onChange={(e) => setUser({ ...user, dirCiudad: e.target.value })} />
+                                    <input type="text" id="dirCiudad" name='dirCiudad' className='form-control' required value={employee.dirCiudad}
+                                        onChange={(e) => setEmployeed({ ...employee, dirCiudad: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -160,8 +160,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='cp'>CP:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="number" id="cp" name='cp' className='form-control' required value={user.cp}
-                                        onChange={(e) => setUser({ ...user, cp: e.target.value })} />
+                                    <input type="number" id="cp" name='cp' className='form-control' required value={employee.cp}
+                                        onChange={(e) => setEmployeed({ ...employee, cp: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -170,8 +170,8 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='dirPais'>Pais:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirPais" name='dirPais' className='form-control' required value={user.dirPais}
-                                        onChange={(e) => setUser({ ...user, dirPais: e.target.value })} />
+                                    <input type="text" id="dirPais" name='dirPais' className='form-control' required value={employee.dirPais}
+                                        onChange={(e) => setEmployeed({ ...employee, dirPais: e.target.value })} />
                                 </Col>
                             </Row>
 

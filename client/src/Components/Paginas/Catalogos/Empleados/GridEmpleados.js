@@ -3,15 +3,15 @@ import { Button } from 'react-bootstrap';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MUIDataTable from "mui-datatables";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers, deleteUser } from "../../../../Redux/Actions/Actions.js";
+import { getEmployees, deleteEmployee } from "../../../../Redux/Actions/Actions.js";
 import Swal from 'sweetalert2';
 import FormEmpleados from './FormEmpleados.js';
 import '../../../Styles/Catalogos/FormClientes.css';
 
-function GridEmpleados({ showForm, idUserEdit }) {
+function GridEmpleados({ idEmployeEdit }) {
     const dispatch = useDispatch();
-    const { users } = useSelector((state) => state.getUsers);
-    const [userSelected, setUserSelected] = useState(false);
+    const { employees } = useSelector((state) => state.getEmployees);
+    const [employeeSelected, setEmployeeSelected] = useState(false);
     const [selectedRowIds, setSelectedRowIds] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [formId, setFormId] = useState(0);
@@ -24,32 +24,32 @@ function GridEmpleados({ showForm, idUserEdit }) {
     });
 
     const columns = [
-        { name: "idCliente", label: "ID" },
-        { name: "rfc", label: "RFC" },
-        { name: "rSocial", label: "Razon Social" },
-        { name: "regFiscal", label: "Registro Fiscal" },
-        { name: "cfdi", label: "CFDI" },
-        { name: "calle", label: "Calle" },
-        { name: "dirNumero", label: "Direccion" },
-        { name: "dirColonia", label: "Colonia" },
-        { name: "dirCiudad", label: "Ciudad" },
-        { name: "cp", label: "CP" },
-        { name: "dirPais", label: "Pais" },
+        { name: "idEmp", label: "ID" },
+        { name: "Rfc", label: "RFC" },
+        { name: "Curp", label: "Curp" },
+        { name: "NomEmp", label: "Nombre" },
+        { name: "ApeP", label: "Apellido Paterno" },
+        { name: "ApeM", label: "Apellido Materno" },
+        { name: "Naci", label: "Fecha Nacimiento" },
+        { name: "NumSoci", label: "Numero Social" },
+        { name: "PuestEmp", label: "Puesto" },
+        { name: "SalEmp", label: "Salario" },
+        { name: "Contrat", label: "Dia Contratacion" },
     ];
 
     const options = {
         filterType: 'checkbox',
         onRowSelectionChange: (currentRowsSelected, allRowsSelected, rowsSelected) => {
-            setSelectedRowIds(allRowsSelected.map(row => users[row.index]?.idCliente));
-            setUserSelected(allRowsSelected.length > 0);
+            setSelectedRowIds(allRowsSelected.map(row => employees[row.index]?.idEmpleado));
+            setEmployeeSelected(allRowsSelected.length > 0);
             if (allRowsSelected.length > 0) {
-                idUserEdit(users[allRowsSelected[0].index]?.idCliente);
+                idEmployeEdit(employees[allRowsSelected[0].index]?.idEmpleado);
             }
         },
     };
 
     useEffect(() => {
-        dispatch(getUsers());
+        dispatch(getEmployees());
     }, [dispatch]);
 
     const handleNew = () => {
@@ -58,7 +58,7 @@ function GridEmpleados({ showForm, idUserEdit }) {
     };
 
     const handleEdit = () => {
-        if (userSelected) {
+        if (employeeSelected) {
             setFormId(selectedRowIds[0]);
             setShowModal(true);
         } else {
@@ -71,16 +71,16 @@ function GridEmpleados({ showForm, idUserEdit }) {
     };
 
     const handleDelete = () => {
-        if (userSelected) {
+        if (employeeSelected) {
             const idUserDelete = selectedRowIds[0];
-            dispatch(deleteUser(idUserDelete)).then(() => {
+            dispatch(deleteEmployee(idUserDelete)).then(() => {
                 Swal.fire({
                     icon: "success",
                     title: "Usuario eliminado",
                     showConfirmButton: false,
                     timer: 1500,
                 }).then(() => {
-                    dispatch(getUsers());
+                    dispatch(getEmployees());
                 });
             });
         } else {
@@ -106,7 +106,7 @@ function GridEmpleados({ showForm, idUserEdit }) {
             <ThemeProvider theme={darkTheme}>
                 <MUIDataTable
                     title={"Lista de Empleados"}
-                    data={users || []}
+                    data={employees || []}
                     columns={columns}
                     options={options}
                     ref={tableRef}

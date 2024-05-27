@@ -6,24 +6,24 @@ import GridEmpleados from './GridEmpleados.js';
 function Usuarios() {
     const dispatch = useDispatch();
     const [showForm, setShowForm] = useState(false);
-    const [idUserEdit, setUserEdit] = useState(0);
+    const [idEmployeEdit, setEmployeEdit] = useState(0);
 
     const showTable = () => {
         setShowForm(prevShowForm => !prevShowForm); // Utilizando el estado anterior
         if (showForm) {
-            setUserEdit(idUserEdit);
+            setEmployeEdit(idEmployeEdit);
         }
     };
 
     useEffect(() => {
 
-    }, [dispatch, idUserEdit]);
+    }, [dispatch, idEmployeEdit]);
 
     return (
         showForm ? (
-            <FormEmpleados showForm={showTable} id={idUserEdit} />
+            <FormEmpleados showForm={showTable} id={idEmployeEdit} />
         ) : (
-            <GridEmpleados showForm={showTable} idUserEdit={id => setUserEdit(id)} />
+            <GridEmpleados showForm={showTable} idEmplyeeEdit={id => setEmployeEdit(id)} />
         )
     );
 }

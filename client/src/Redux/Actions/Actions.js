@@ -20,7 +20,7 @@ export const getUserUnique = createAsyncThunk("users/getUserUnique",
     async (id) => {
         try
         {      
-            const resp = await axios.get('http://187.189.158.186:7777/Usuario/'+id);
+            const resp = await axios.get('https://localhost:7180/api/Clientes'+id);
 
             return resp.data;
         } 
@@ -35,7 +35,7 @@ export const deleteUser = createAsyncThunk("users/deleteUser",
     async (id) => {
         try
         {      
-            const resp = await axios.delete('http://187.189.158.186:7777/Usuario/'+id);
+            const resp = await axios.delete('https://localhost:7180/api/Clientes'+id);
 
             return resp.data;
         } 
@@ -50,7 +50,7 @@ export const addUser = createAsyncThunk("users/addUser",
     async (data) => {
         try
         {      
-            const resp = await axios.post('http://187.189.158.186:7777/Usuario', data);
+            const resp = await axios.post('https://localhost:7180/api/Clientes', data);
 
             return resp.data;
         } 
@@ -65,7 +65,7 @@ export const editUSer = createAsyncThunk("users/editUSer",
     async (data) => {
         try
         {      
-            const resp = await axios.put('http://187.189.158.186:7777/Usuario/'+data.id, data);
+            const resp = await axios.put('https://localhost:7180/api/Clientes'+data.id, data);
 
             return resp.data;
         } 
@@ -80,7 +80,7 @@ export const getEmployees = createAsyncThunk("employees/getEmployees",
     async () => {
         try
         {      
-            const resp = await axios.get('http://187.189.158.186:7777/Usuario');
+            const resp = await axios.get('https://localhost:7180/api/Empleados');
 
             return resp.data;
         } 

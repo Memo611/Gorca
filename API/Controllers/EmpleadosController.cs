@@ -23,7 +23,7 @@ public class EmpleadosController : ControllerBase
     public IEnumerable<ItemEmpleado> Get()
     {
         var listaEmpleados = (from e in _contexto.Empleado
-            where e.Habilitado == true
+
             select new ItemEmpleado()
             {
                 idEmp = e.ID_Emp,

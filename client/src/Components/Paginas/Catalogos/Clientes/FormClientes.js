@@ -2,7 +2,7 @@ import { Modal,Col, Button, Row, Form, Card, CardHeader, CardBody, CardFooter } 
 import '../../../Styles/Catalogos/FormClientes.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { addUser, getUserUnique } from '../../../../Redux/Actions/Actions.js';
+import { addUser, getUserUnique, editUSer} from '../../../../Redux/Actions/Actions.js';
 import { useDispatch } from 'react-redux';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
@@ -18,47 +18,63 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
         dirNumero: 0,
         dirColonia: '',
         dirCiudad: '',
-        cp: 0,
+        cp: '',
         dirPais: '',
     };
 
     const dispatch = useDispatch();
-    const [user, setUser] = useState({ initialUserState });
+    const [user, setUser] = useState(initialUserState);
 
     useEffect(() => {
         if (id > 0) {
             dispatch(getUserUnique(id))
                 .then((response) => {
                     setUser(response.payload);
+                }).catch((error) => {
+                    console.error('Error fetching user:', error);
                 });
+        } else {
+            setUser({
+                idCliente: 0,
+                rfc: '',
+                rSocial: '',
+                regFiscal: '',
+                cfdi: '',
+                calle: '',
+                dirNumero: 0,
+                dirColonia: '',
+                dirCiudad: '',
+                cp: '',
+                dirPais: '',
+            });
         }
     }, [dispatch, id]);
 
     const handleCancel = () => {
         setUser(initialUserState);
         showForm();
+        handleClose();
     };
 
     const handleGuardar = async () => {
-        if (user.Contraseña === user.ConfirmarContraseña) {
-            try {
-                const respuesta = await dispatch(addUser(user)); // Suponiendo que addUser devuelve una promesa
-                console.log('Usuario guardado:', respuesta); // Registra la respuesta para depurar
-                setUser(initialUserState); // Limpia el formulario después del envío exitoso
-            } catch (error) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Error",
-                    text: "Error al guardar usuario",
-                });
-            } finally {
-                // Opcionalmente, vuelve a habilitar el botón aquí si se deshabilitó durante la solicitud
+        try {
+            if (user.idCliente > 0) { // Si el ID del usuario es mayor que 0, es una edición
+                await dispatch(editUSer(user)); // Llamar a la acción de edición en lugar de addUser
+            } else {
+                await dispatch(addUser(user));
             }
-        } else {
+            Swal.fire({
+                icon: "success",
+                title: "Cliente guardado",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            handleCancel();
+        } catch (error) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Las Contraseñas no coinciden",
+                text: "Error al guardar Cliente",
             });
         }
     };
@@ -75,6 +91,7 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                         <CardHeader className='Titulo'> Registro de Cliente </CardHeader>
 
                         <CardBody className='cuerpo'>
+
                             <Row>
                                 <Col>
                                     <Form.Label htmlFor='rfc'> RFC </Form.Label>
@@ -160,7 +177,7 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                                     <Form.Label htmlFor='cp'>CP:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="number" id="cp" name='cp' className='form-control' required value={user.cp}
+                                    <input type="text" id="cp" name='cp' className='form-control' required value={user.cp}
                                         onChange={(e) => setUser({ ...user, cp: e.target.value })} />
                                 </Col>
                             </Row>

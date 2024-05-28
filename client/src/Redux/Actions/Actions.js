@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
+//Optencion de datos de los clientes
 export const getUsers = createAsyncThunk("users/getUsers",
     async () => {
         try
@@ -15,12 +15,12 @@ export const getUsers = createAsyncThunk("users/getUsers",
         }
     }
 );
-
+//Optencion de datos de un cliente
 export const getUserUnique = createAsyncThunk("users/getUserUnique",
     async (id) => {
         try
         {      
-            const resp = await axios.get('https://localhost:7180/api/Clientes'+id);
+            const resp = await axios.get(`https://localhost:7180/api/Clientes/${id}`);
 
             return resp.data;
         } 
@@ -30,22 +30,18 @@ export const getUserUnique = createAsyncThunk("users/getUserUnique",
         }
     }
 );
-
+//Action para eliminar un Cliente
 export const deleteUser = createAsyncThunk("users/deleteUser",
     async (id) => {
-        try
-        {      
-            const resp = await axios.delete('https://localhost:7180/api/Clientes'+id);
-
+        try {
+            const resp = await axios.delete(`https://localhost:7180/api/Clientes/${id}`);
             return resp.data;
-        } 
-        catch (error) 
-        {
-            return null;
+        } catch (error) {
+            throw new Error(error);
         }
     }
 );
-
+//Action para agregar un Cliente
 export const addUser = createAsyncThunk("users/addUser",
     async (data) => {
         try
@@ -60,13 +56,12 @@ export const addUser = createAsyncThunk("users/addUser",
         }
     }
 );
-
+//Action para editar un Cliente
 export const editUSer = createAsyncThunk("users/editUSer",
     async (data) => {
         try
         {      
-            const resp = await axios.put('https://localhost:7180/api/Clientes'+data.id, data);
-
+            const resp = await axios.put(`https://localhost:7180/api/Clientes/${data.id}`, data);
             return resp.data;
         } 
         catch (error) 
@@ -76,6 +71,8 @@ export const editUSer = createAsyncThunk("users/editUSer",
     }
 );
 
+
+//Action para optener los datos de los empleados
 export const getEmployees = createAsyncThunk("employees/getEmployees",
     async () => {
         try
@@ -90,12 +87,12 @@ export const getEmployees = createAsyncThunk("employees/getEmployees",
         }
     }
 );
-
+//Action para optener los datos de un empleado
 export const getEmployeeUnique = createAsyncThunk("employees/getEmployeeUnique",
     async (id) => {
         try
         {      
-            const resp = await axios.get('http://187.189.158.186:7777/Usuario/'+id);
+            const resp = await axios.get(`https://localhost:7180/api/Empleados/${id}`);
 
             return resp.data;
         } 
@@ -105,12 +102,26 @@ export const getEmployeeUnique = createAsyncThunk("employees/getEmployeeUnique",
         }
     }
 );
-
+//Action para borrar a un empleado
 export const deleteEmployee = createAsyncThunk("employees/deleteEmployee",
     async (id) => {
         try
         {      
-            const resp = await axios.delete('http://187.189.158.186:7777/Usuario/'+id);
+            const resp = await axios.delete(`https://localhost:7180/api/Empleados/${id}`);
+            return resp.data;
+        } 
+        catch (error) 
+        {
+            return null;
+        }
+    }
+);
+//Action para agregar a un empleado
+export const addEmployee = createAsyncThunk("employees/addEmployee",
+    async (data) => {
+        try
+        {      
+            const resp = await axios.post('https://localhost:7180/api/Empleados', data);
 
             return resp.data;
         } 
@@ -120,27 +131,12 @@ export const deleteEmployee = createAsyncThunk("employees/deleteEmployee",
         }
     }
 );
-
-export const addEmployee = createAsyncThunk("employee/addEmployee",
+//Action para editar a un empleado
+export const editEmployee = createAsyncThunk("employees/editEmployee",
     async (data) => {
         try
         {      
-            const resp = await axios.post('http://187.189.158.186:7777/Usuario', data);
-
-            return resp.data;
-        } 
-        catch (error) 
-        {
-            return null;
-        }
-    }
-);
-
-export const editEmployee = createAsyncThunk("employee/editEmployee",
-    async (data) => {
-        try
-        {      
-            const resp = await axios.put('http://187.189.158.186:7777/Usuario/'+data.id, data);
+            const resp = await axios.put(`https://localhost:7180/api/Empleados/${data.id}`, data);
 
             return resp.data;
         } 

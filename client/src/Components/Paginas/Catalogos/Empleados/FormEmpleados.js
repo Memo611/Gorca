@@ -2,7 +2,7 @@ import { Modal,Col, Button, Row, Form, Card, CardHeader, CardBody, CardFooter } 
 import '../../../Styles/Catalogos/FormClientes.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { addUser, getUserUnique } from '../../../../Redux/Actions/Actions.js';
+import { addEmployee, getEmployeeUnique } from '../../../../Redux/Actions/Actions.js';
 import { useDispatch } from 'react-redux';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
@@ -10,16 +10,17 @@ import Swal from 'sweetalert2';
 function FormClientes({ showForm, id, showModal, handleClose}) {
     const initialUserState = {
         idEmp: 0,
-        Rfc: '',
-        Curp: '',
-        NomEmp: '',
-        ApeP: '',
-        ApeM: '',
-        Naci: 0,
-        NumSoci: '',
-        PuestEmp: '',
-        SalEmp: 0,
-        Contrat: '',
+        rfc: '',
+        curp: '',
+        nomEmp: '',
+        apeP: '',
+        apeM: '',
+        naci: 0,
+        numSoci: '',
+        puestEmp: '',
+        salEmp: 0,
+        contrat: '',
+        habilitado: 1
     };
 
     const dispatch = useDispatch();
@@ -27,38 +28,50 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
 
     useEffect(() => {
         if (id > 0) {
-            dispatch(getUserUnique(id))
+            dispatch(getEmployeeUnique(id))
                 .then((response) => {
                     setEmployeed(response.payload);
+                }).catch((error) => {
+                    console.error('Error fetching user:', error);
                 });
+        } else {
+            setEmployeed({
+                idEmp: 0,
+                rfc: '',
+                curp: '',
+                nomEmp: '',
+                apeP: '',
+                apeM: '',
+                naci: 0,
+                numSoci: '',
+                puestEmp: '',
+                salEmp: 0,
+                contrat: '',
+            });
         }
     }, [dispatch, id]);
 
     const handleCancel = () => {
         setEmployeed(initialUserState);
         showForm();
+        handleClose();
     };
 
     const handleGuardar = async () => {
-        if (employee.Contraseña === employee.ConfirmarContraseña) {
-            try {
-                const respuesta = await dispatch(addUser(employee)); // Suponiendo que addUser devuelve una promesa
-                console.log('Usuario guardado:', respuesta); // Registra la respuesta para depurar
-                setEmployeed(initialUserState); // Limpia el formulario después del envío exitoso
-            } catch (error) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Error",
-                    text: "Error al guardar usuario",
-                });
-            } finally {
-                // Opcionalmente, vuelve a habilitar el botón aquí si se deshabilitó durante la solicitud
-            }
-        } else {
+        try {
+            await dispatch(addEmployee(employee));
+            Swal.fire({
+                icon: "success",
+                title: "Empleado guardado",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            handleCancel();
+        } catch (error) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Las Contraseñas no coinciden",
+                text: "Error al guardar Empleado",
             });
         }
     };
@@ -72,12 +85,12 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
             <Modal.Body>
                 <Row sm={7}>
                     <Card className='estilo'>
-                        <CardHeader className='Titulo'> Registro de Cliente </CardHeader>
+                        <CardHeader className='Titulo'> Registro de Empleado </CardHeader>
 
                         <CardBody className='cuerpo'>
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='rfc'> RFC </Form.Label>
+                                    <Form.Label htmlFor='rfc'> RFC: </Form.Label>
                                 </Col>
                                 <Col>
                                     <input type="text" id="rfc" name='rfc' className='form-control' required value={employee.rfc}
@@ -87,91 +100,91 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='rSocial'>Razon Social: </Form.Label>
+                                    <Form.Label htmlFor='curp'>Curp: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="rSocial" name='rSocial' className='form-control' required value={employee.rSocial}
-                                        onChange={(e) => setEmployeed({ ...employee, rSocial: e.target.value })} />
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col>
-                                    <Form.Label htmlFor='regFiscal'>Registro Fiscal: </Form.Label>
-                                </Col>
-                                <Col>
-                                    <input type="text" id="regFiscal" name='regFiscal' className='form-control' required value={employee.regFiscal}
-                                        onChange={(e) => setEmployeed({ ...employee, regFiscal: e.target.value })} />
+                                    <input type="text" id="curp" name='curp' className='form-control' required value={employee.curp}
+                                        onChange={(e) => setEmployeed({ ...employee, curp: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='cfdi'>CFDI: </Form.Label>
+                                    <Form.Label htmlFor='nomEmp'>Nombre: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="cfdi" name='cfdi' className='form-control' required value={employee.cfdi}
-                                        onChange={(e) => setEmployeed({ ...employee, cfdi: e.target.value })} />
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col>
-                                    <Form.Label htmlFor='calle'>Calle: </Form.Label>
-                                </Col>
-                                <Col>
-                                    <input type="text" id="calle" name='calle' className='form-control' required value={employee.calle}
-                                        onChange={(e) => setEmployeed({ ...employee, calle: e.target.value })} />
+                                    <input type="text" id="nomEmp" name='nomEmp' className='form-control' required value={employee.nomEmp}
+                                        onChange={(e) => setEmployeed({ ...employee, nomEmp: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='dirNumero'>Numero: </Form.Label>
+                                    <Form.Label htmlFor='apeP'>Apellido Paterno: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="number" id="dirNumero" name='dirNumero' className='form-control' required value={employee.dirNumero}
-                                        onChange={(e) => setEmployeed({ ...employee, dirNumero: e.target.value })} />
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col>
-                                    <Form.Label htmlFor='dirColonia'>Colonia:  </Form.Label>
-                                </Col>
-                                <Col>
-                                    <input type="text" id="dirColonia" name='dirColonia' className='form-control' required value={employee.dirColonia}
-                                        onChange={(e) => setEmployeed({ ...employee, dirColonia: e.target.value })} />
+                                    <input type="text" id="apeP" name='apeP' className='form-control' required value={employee.apeP}
+                                        onChange={(e) => setEmployeed({ ...employee, apeP: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='dirCiudad'>Ciudad:  </Form.Label>
+                                    <Form.Label htmlFor='apeM'>Apellido Materno: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirCiudad" name='dirCiudad' className='form-control' required value={employee.dirCiudad}
-                                        onChange={(e) => setEmployeed({ ...employee, dirCiudad: e.target.value })} />
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col>
-                                    <Form.Label htmlFor='cp'>CP:  </Form.Label>
-                                </Col>
-                                <Col>
-                                    <input type="number" id="cp" name='cp' className='form-control' required value={employee.cp}
-                                        onChange={(e) => setEmployeed({ ...employee, cp: e.target.value })} />
+                                    <input type="text" id="apeM" name='apeM' className='form-control' required value={employee.apeM}
+                                        onChange={(e) => setEmployeed({ ...employee, apeM: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='dirPais'>Pais:  </Form.Label>
+                                    <Form.Label htmlFor='naci'>Fecha de Nacimiento: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirPais" name='dirPais' className='form-control' required value={employee.dirPais}
-                                        onChange={(e) => setEmployeed({ ...employee, dirPais: e.target.value })} />
+                                    <input type="date" id="naci" name='naci' className='form-control' required value={employee.naci}
+                                        onChange={(e) => setEmployeed({ ...employee, naci: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col>
+                                    <Form.Label htmlFor='numSoci'>NSS:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="text" id="numSoci" name='numSoci' className='form-control' required value={employee.numSoci}
+                                        onChange={(e) => setEmployeed({ ...employee, numSoci: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col>
+                                    <Form.Label htmlFor='puestoEmp'>Puesto:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="text" id="puestoEmp" name='puestoEmp' className='form-control' required value={employee.puestoEmp}
+                                        onChange={(e) => setEmployeed({ ...employee, puestoEmp: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col>
+                                    <Form.Label htmlFor='salEmp'>Salario:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="money" id="salEmp" name='salEmp' className='form-control' required value={employee.salEmp}
+                                        onChange={(e) => setEmployeed({ ...employee, salEmp: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col>
+                                    <Form.Label htmlFor='contrat'>Fecha de Contratacion:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="date" id="contrat" name='contrat' className='form-control' required value={employee.contrat}
+                                        onChange={(e) => setEmployeed({ ...employee, contrat: e.target.value })} />
                                 </Col>
                             </Row>
 

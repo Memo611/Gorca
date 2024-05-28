@@ -23,7 +23,7 @@ function Usuarios() {
         showForm ? (
             <FormEmpleados showForm={showTable} id={idEmployeEdit} />
         ) : (
-            <GridEmpleados showForm={showTable} idEmplyeeEdit={id => setEmployeEdit(id)} />
+            <GridEmpleados showForm={showTable} idEmployeEdit={id => setEmployeEdit(id)} />
         )
     );
 }

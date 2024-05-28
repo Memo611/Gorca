@@ -59,13 +59,14 @@ function Clientes({ idUserEdit }) {
 
     const handleEdit = () => {
         if (userSelected) {
-            setFormId(selectedRowIds[0]);
+            const idUserEdit = selectedRowIds[0];
             setShowModal(true);
+            setFormId(idUserEdit);
         } else {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Seleccione un usuario para editar",
+                text: "Seleccione un Empleado para editar",
             });
         }
     };
@@ -73,21 +74,39 @@ function Clientes({ idUserEdit }) {
     const handleDelete = () => {
         if (userSelected) {
             const idUserDelete = selectedRowIds[0];
-            dispatch(deleteUser(idUserDelete)).then(() => {
-                Swal.fire({
-                    icon: "success",
-                    title: "Usuario eliminado",
-                    showConfirmButton: false,
-                    timer: 1500,
-                }).then(() => {
-                    dispatch(getUsers());
-                });
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: "No podrá revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    dispatch(deleteUser(idUserDelete)).then(() => {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Empleado eliminado",
+                            showConfirmButton: false,
+                            timer: 1500,
+                        }).then(() => {
+                            dispatch(getUsers());
+                        });
+                    }).catch((error) => {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error",
+                            text: "Error al eliminar Empleado",
+                        });
+                    });
+                }
             });
         } else {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Seleccione un usuario para eliminar",
+                text: "Seleccione un Empleado para eliminar",
             });
         }
     };

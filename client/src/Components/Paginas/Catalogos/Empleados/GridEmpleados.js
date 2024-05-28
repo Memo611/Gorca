@@ -25,25 +25,25 @@ function GridEmpleados({ idEmployeEdit }) {
 
     const columns = [
         { name: "idEmp", label: "ID" },
-        { name: "Rfc", label: "RFC" },
-        { name: "Curp", label: "Curp" },
-        { name: "NomEmp", label: "Nombre" },
-        { name: "ApeP", label: "Apellido Paterno" },
-        { name: "ApeM", label: "Apellido Materno" },
-        { name: "Naci", label: "Fecha Nacimiento" },
-        { name: "NumSoci", label: "Numero Social" },
-        { name: "PuestEmp", label: "Puesto" },
-        { name: "SalEmp", label: "Salario" },
-        { name: "Contrat", label: "Dia Contratacion" },
+        { name: "rfc", label: "RFC" },
+        { name: "curp", label: "Curp" },
+        { name: "nomEmp", label: "Nombre" },
+        { name: "apeP", label: "Apellido Paterno" },
+        { name: "apeM", label: "Apellido Materno" },
+        { name: "naci", label: "Fecha Nacimiento" },
+        { name: "numSoci", label: "Numero Social" },
+        { name: "puestEmp", label: "Puesto" },
+        { name: "salEmp", label: "Salario" },
+        { name: "contrat", label: "Dia Contratacion" },
     ];
 
     const options = {
         filterType: 'checkbox',
         onRowSelectionChange: (currentRowsSelected, allRowsSelected, rowsSelected) => {
-            setSelectedRowIds(allRowsSelected.map(row => employees[row.index]?.idEmpleado));
+            setSelectedRowIds(allRowsSelected.map(row => employees[row.index]?.idEmp));
             setEmployeeSelected(allRowsSelected.length > 0);
             if (allRowsSelected.length > 0) {
-                idEmployeEdit(employees[allRowsSelected[0].index]?.idEmpleado);
+                idEmployeEdit(employees[allRowsSelected[0].index]?.idEmp);
             }
         },
     };
@@ -72,16 +72,42 @@ function GridEmpleados({ idEmployeEdit }) {
 
     const handleDelete = () => {
         if (employeeSelected) {
-            const idUserDelete = selectedRowIds[0];
-            dispatch(deleteEmployee(idUserDelete)).then(() => {
+            const idEmployeedDelete = selectedRowIds[0];
+            if (!idEmployeedDelete) {
                 Swal.fire({
-                    icon: "success",
-                    title: "Usuario eliminado",
-                    showConfirmButton: false,
-                    timer: 1500,
-                }).then(() => {
-                    dispatch(getEmployees());
+                    icon: "error",
+                    title: "Error",
+                    text: "No se pudo obtener el ID del empleado a eliminar",
                 });
+                return;
+            }
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: "No podrá revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    dispatch(deleteEmployee(idEmployeedDelete)).then(() => {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Usuario eliminado",
+                            showConfirmButton: false,
+                            timer: 1500,
+                        }).then(() => {
+                            dispatch(getEmployees());
+                        });
+                    }).catch((error) => {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error",
+                            text: "Error al eliminar usuario",
+                        });
+                    });
+                }
             });
         } else {
             Swal.fire({

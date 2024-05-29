@@ -2,7 +2,7 @@ import { Modal,Col, Button, Row, Form, Card, CardHeader, CardBody, CardFooter } 
 import '../../../Styles/Catalogos/FormClientes.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { addEmployee, getEmployeeUnique } from '../../../../Redux/Actions/Actions.js';
+import { addEmployee, getEmployeeUnique, editEmployee } from '../../../../Redux/Actions/Actions.js';
 import { useDispatch } from 'react-redux';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
@@ -20,7 +20,6 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
         puestEmp: '',
         salEmp: 0,
         contrat: '',
-        habilitado: 1
     };
 
     const dispatch = useDispatch();
@@ -59,10 +58,14 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
 
     const handleGuardar = async () => {
         try {
-            await dispatch(addEmployee(employee));
+            if (employee.idEmp > 0) { // Si el ID del usuario es mayor que 0, es una edición
+                await dispatch(editEmployee(employee)); // Llamar a la acción de edición en lugar de addUser
+            } else {
+                await dispatch(addEmployee(employee));
+            }
             Swal.fire({
                 icon: "success",
-                title: "Empleado guardado",
+                title: "Cliente guardado",
                 showConfirmButton: false,
                 timer: 1500,
             });
@@ -71,11 +74,10 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Error al guardar Empleado",
+                text: "Error al guardar Cliente",
             });
         }
     };
-
 
     return (
         <Modal show={showModal} onHide={handleClose}>

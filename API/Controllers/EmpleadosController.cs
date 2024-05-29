@@ -91,6 +91,7 @@ public class EmpleadosController : ControllerBase
             NSS = nuevoEmpleado.NumSoci,
             Puesto = nuevoEmpleado.PuestEmp,
             Salario = nuevoEmpleado.SalEmp,
+            Habilitado = true,
             Fecha_contrato = nuevoEmpleado.Contrat
         };
 

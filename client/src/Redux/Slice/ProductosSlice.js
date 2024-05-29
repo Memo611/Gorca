@@ -1,45 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUsers, getUserUnique } from '../Actions/Actions.js';
+import { getProducs, getProducUnique } from '../Actions/Actions.js';
 
 const initialState = {
-    users: [],
-    user: {},
+    producs: [],
+    produc: {},
     loading: false,
     error: null,
 };
 
-const UsersSlice = createSlice({
-    name: "getUsers",
+const ProducSlice = createSlice({
+    name: "getProducs",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(getUsers.pending, (state) => {
+            .addCase(getProducs.pending, (state) => {
                 state.users = [];
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(getUsers.fulfilled, (state, action) => {
+            .addCase(getProducs.fulfilled, (state, action) => {
                 state.users = action.payload;
                 state.loading = false;
                 state.error = null;
             })
-            .addCase(getUsers.rejected, (state, action) => {
+            .addCase(getProducs.rejected, (state, action) => {
                 state.users = [];
                 state.loading = false;
                 state.error = action.error.message;
             })
-            .addCase(getUserUnique.pending, (state) => {
+            .addCase(getProducUnique.pending, (state) => {
                 state.user = {};
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(getUserUnique.fulfilled, (state, action) => {
+            .addCase(getProducUnique.fulfilled, (state, action) => {
                 state.user = action.payload;
                 state.loading = false;
                 state.error = null;
             })
-            .addCase(getUserUnique.rejected, (state, action) => {
+            .addCase(getProducUnique.rejected, (state, action) => {
                 state.user = {};
                 state.loading = false;
                 state.error = action.error.message;
@@ -47,4 +47,4 @@ const UsersSlice = createSlice({
     },
 });
 
-export const getUserReducer = UsersSlice.reducer;
+export const getProducReducer = ProducSlice.reducer;

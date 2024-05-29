@@ -3,15 +3,15 @@ import { Button } from 'react-bootstrap';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MUIDataTable from "mui-datatables";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers, deleteUser } from "../../../../Redux/Actions/Actions.js";
+import { getProducs, deleteProduc } from "../../../../Redux/Actions/Actions.js";
 import Swal from 'sweetalert2';
-import FormClientes from './FormClientes';
+import FormProductos from './FormProductos.js';
 import '../../../Styles/Catalogos/FormClientes.css';
 
-function Clientes({ idUserEdit }) {
+function Clientes({ idProducEdit }) {
     const dispatch = useDispatch();
-    const { users } = useSelector((state) => state.getUsers);
-    const [userSelected, setUserSelected] = useState(false);
+    const { producs } = useSelector((state) => state.getProducs);
+    const [producSelected, setProducSelected] = useState(false);
     const [selectedRowIds, setSelectedRowIds] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [formId, setFormId] = useState(0);
@@ -24,32 +24,36 @@ function Clientes({ idUserEdit }) {
     });
 
     const columns = [
-        { name: "idCliente", label: "ID" },
-        { name: "rfc", label: "RFC" },
-        { name: "rSocial", label: "Razon Social" },
-        { name: "regFiscal", label: "Registro Fiscal" },
-        { name: "cfdi", label: "CFDI" },
-        { name: "calle", label: "Calle" },
-        { name: "dirNumero", label: "Direccion" },
-        { name: "dirColonia", label: "Colonia" },
-        { name: "dirCiudad", label: "Ciudad" },
-        { name: "cp", label: "CP" },
-        { name: "dirPais", label: "Pais" },
+        { name: "idProd", label: "ID" },
+        { name: "marc", label: "Marca" },
+        { name: "vol", label: "Volumen" },
+        { name: "fecFresc", label: "Fecha Max Frescura" },
+        { name: "sabo", label: "Sabor" },
+        { name: "sku", label: "SKU" },
+        { name: "prec", label: "Precio" },
+        { name: "objImpu", label: "Impuesto" },
+        { name: "clavUni", label: "Clave Unidad" },
+        { name: "clavProd", label: "Clave del Producto" },
+        { name: "baseMan", label: "Base Manual" },
+        { name: "desc", label: "Descripcion" },
+        { name: "existencia", label: "Existencia" },
+        { name: "stockMin", label: "Stock Minimo" },
+        { name: "stockMax", label: "Stock Maximo" },
     ];
 
     const options = {
         filterType: 'checkbox',
         onRowSelectionChange: (currentRowsSelected, allRowsSelected, rowsSelected) => {
-            setSelectedRowIds(allRowsSelected.map(row => users[row.index]?.idCliente));
-            setUserSelected(allRowsSelected.length > 0);
+            setSelectedRowIds(allRowsSelected.map(row => producs[row.index]?.idProd));
+            setProducSelected(allRowsSelected.length > 0);
             if (allRowsSelected.length > 0) {
-                idUserEdit(users[allRowsSelected[0].index]?.idCliente);
+                idProducEdit(producs[allRowsSelected[0].index]?.idProd);
             }
         },
     };
 
     useEffect(() => {
-        dispatch(getUsers());
+        dispatch(getProducs());
     }, [dispatch]);
 
     const handleNew = () => {
@@ -58,10 +62,10 @@ function Clientes({ idUserEdit }) {
     };
 
     const handleEdit = () => {
-        if (userSelected) {
-            const idUserEdit = selectedRowIds[0];
+        if (producSelected) {
+            const idProducEdit = selectedRowIds[0];
             setShowModal(true);
-            setFormId(idUserEdit);
+            setFormId(idProducEdit);
         } else {
             Swal.fire({
                 icon: "error",
@@ -72,8 +76,8 @@ function Clientes({ idUserEdit }) {
     };
 
     const handleDelete = () => {
-        if (userSelected) {
-            const idUserDelete = selectedRowIds[0];
+        if (producSelected) {
+            const idProducDelete = selectedRowIds[0];
             Swal.fire({
                 title: '¿Está seguro?',
                 text: "No podrá revertir esto!",
@@ -84,20 +88,20 @@ function Clientes({ idUserEdit }) {
                 confirmButtonText: 'Sí, eliminarlo!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    dispatch(deleteUser(idUserDelete)).then(() => {
+                    dispatch(deleteProduc(idProducDelete)).then(() => {
                         Swal.fire({
                             icon: "success",
-                            title: "Empleado eliminado",
+                            title: "Producto eliminado",
                             showConfirmButton: false,
                             timer: 1500,
                         }).then(() => {
-                            dispatch(getUsers());
+                            dispatch(getProducs());
                         });
                     }).catch((error) => {
                         Swal.fire({
                             icon: "error",
                             title: "Error",
-                            text: "Error al eliminar Empleado",
+                            text: "Error al eliminar Producto",
                         });
                     });
                 }
@@ -125,13 +129,13 @@ function Clientes({ idUserEdit }) {
             <ThemeProvider theme={darkTheme}>
                 <MUIDataTable
                     title={"Lista de Clientes"}
-                    data={users || []}
+                    data={producs || []}
                     columns={columns}
                     options={options}
                     ref={tableRef}
                 />
             </ThemeProvider>
-            <FormClientes showModal={showModal} handleClose={handleClose} id={formId} showForm={() => setShowModal(false)} />
+            <FormProductos showModal={showModal} handleClose={handleClose} id={formId} showForm={() => setShowModal(false)} />
         </>
     );
 }

@@ -1,31 +1,31 @@
 import React, { useState, useEffect} from 'react';
 import { useDispatch } from "react-redux";
-import FormClientes from './FormClientes.js';
-import GridClientes from './GridClientes.js';
+import FormProductos from './FormProductos.js';
+import GridProductos from './GridProductos.js';
 
-function Usuarios() {
+function Productos() {
     const dispatch = useDispatch();
     const [showForm, setShowForm] = useState(false);
-    const [idUserEdit, setUserEdit] = useState(0);
+    const [idProducEdit, setProducEdit] = useState(0);
 
     const showTable = () => {
         setShowForm(prevShowForm => !prevShowForm); // Utilizando el estado anterior
         if (showForm) {
-            setUserEdit(idUserEdit);
+            setProducEdit(idProducEdit);
         }
     };
 
     useEffect(() => {
 
-    }, [dispatch, idUserEdit]);
+    }, [dispatch, idProducEdit]);
 
     return (
         showForm ? (
-            <FormClientes showForm={showTable} id={idUserEdit} />
+            <FormProductos showForm={showTable} id={idProducEdit} />
         ) : (
-            <GridClientes showForm={showTable} idUserEdit={id => setUserEdit(id)} />
+            <GridProductos showForm={showTable} idProducEdit={id => setProducEdit(id)} />
         )
     );
 }
 
-export default Usuarios;
+export default Productos;

@@ -12,15 +12,15 @@ public class Producto
     [Key]
     public int ID_Prod { get; set; }
     public string Marca { get; set; }
-    public int Volumen { get; set; }
+    public string Volumen { get; set; }
     public DateTime Fecha_Max_Frescura { get; set; }
     public string Sabor { get; set; }
     public int SKU { get; set; }
     [Column(TypeName="money")]
     public decimal Precio { get; set; }
     public string Obj_Impu { get; set; }
-    public int Clave_Unidad { get; set; }
-    public int Clave_Prod_Serv { get; set; }
+    public string Clave_Unidad { get; set; }
+    public string Clave_Prod_Serv { get; set; }
     public string Base_Manual { get; set; }
     public string Descripcion { get; set; }
     public int Cant_Exist { get; set; }

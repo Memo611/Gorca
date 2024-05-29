@@ -146,3 +146,78 @@ export const editEmployee = createAsyncThunk("employees/editEmployee",
         }
     }
 );
+
+//Action para optener los datos de los empleados
+export const getProducs = createAsyncThunk("producs/getProducs",
+    async () => {
+        try
+        {      
+            const resp = await axios.get('https://localhost:7180/api/Productos');
+
+            return resp.data;
+        } 
+        catch (error) 
+        {
+            return null;
+        }
+    }
+);
+//Action para optener los datos de un empleado
+export const getProducUnique = createAsyncThunk("producs/getProducUnique",
+    async (id) => {
+        try
+        {      
+            const resp = await axios.get(`https://localhost:7180/api/Productos/${id}`);
+
+            return resp.data;
+        } 
+        catch (error) 
+        {
+            return null;
+        }
+    }
+);
+//Action para borrar a un empleado
+export const deleteProduc = createAsyncThunk("producs/deleteProduc",
+    async (id) => {
+        try
+        {      
+            const resp = await axios.delete(`https://localhost:7180/api/Productos/${id}`);
+            return resp.data;
+        } 
+        catch (error) 
+        {
+            return null;
+        }
+    }
+);
+//Action para agregar a un empleado
+export const addProduc = createAsyncThunk("producs/addProduc",
+    async (data) => {
+        try
+        {      
+            const resp = await axios.post('https://localhost:7180/api/Productos', data);
+
+            return resp.data;
+        } 
+        catch (error) 
+        {
+            return null;
+        }
+    }
+);
+//Action para editar a un empleado
+export const editProduc = createAsyncThunk("producs/editProduc",
+    async (data) => {
+        try
+        {      
+            const resp = await axios.put(`https://localhost:7180/api/Productos/${data.id}`, data);
+
+            return resp.data;
+        } 
+        catch (error) 
+        {
+            return null;
+        }
+    }
+);

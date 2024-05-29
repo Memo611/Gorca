@@ -59,8 +59,9 @@ function GridEmpleados({ idEmployeEdit }) {
 
     const handleEdit = () => {
         if (employeeSelected) {
-            setFormId(selectedRowIds[0]);
+            const idEmployeEdit = selectedRowIds[0];
             setShowModal(true);
+            setFormId(idEmployeEdit);
         } else {
             Swal.fire({
                 icon: "error",
@@ -72,15 +73,7 @@ function GridEmpleados({ idEmployeEdit }) {
 
     const handleDelete = () => {
         if (employeeSelected) {
-            const idEmployeedDelete = selectedRowIds[0];
-            if (!idEmployeedDelete) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Error",
-                    text: "No se pudo obtener el ID del empleado a eliminar",
-                });
-                return;
-            }
+            const idEmployeeDelete = selectedRowIds[0];
             Swal.fire({
                 title: '¿Está seguro?',
                 text: "No podrá revertir esto!",
@@ -91,10 +84,10 @@ function GridEmpleados({ idEmployeEdit }) {
                 confirmButtonText: 'Sí, eliminarlo!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    dispatch(deleteEmployee(idEmployeedDelete)).then(() => {
+                    dispatch(deleteEmployee(idEmployeeDelete)).then(() => {
                         Swal.fire({
                             icon: "success",
-                            title: "Usuario eliminado",
+                            title: "Empleado eliminado",
                             showConfirmButton: false,
                             timer: 1500,
                         }).then(() => {
@@ -104,7 +97,7 @@ function GridEmpleados({ idEmployeEdit }) {
                         Swal.fire({
                             icon: "error",
                             title: "Error",
-                            text: "Error al eliminar usuario",
+                            text: "Error al eliminar Empleado",
                         });
                     });
                 }
@@ -113,7 +106,7 @@ function GridEmpleados({ idEmployeEdit }) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Seleccione un usuario para eliminar",
+                text: "Seleccione un Empleado para eliminar",
             });
         }
     };

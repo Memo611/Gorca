@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CvdnSMOPjJV+J1B4ppwXyO1/fwWrPJ7cTvupjyYfceOTrdU3ceSWVUZy4m7DGxX9MulMUbeCVhum2df/fX2JnQ==",
+  "dgSpecHash": "6U54mj/uM7mx8PO9/kUPt4bNTVHJRUgqEqWH3n2qtePj7XiRE2cQLtpQUa4nfsAALXO6STG5VdrCPdYpXAXilg==",
   "success": true,
-  "projectFilePath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\memo7\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\memo7\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -77,7 +77,11 @@
     "C:\\Users\\memo7\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\memo7\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\memo7\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\memo7\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\memo7\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\memo7\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\memo7\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\memo7\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\memo7\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.18\\microsoft.netcore.app.host.win-x64.7.0.18.nupkg.sha512"
   ],
   "logs": []
 }

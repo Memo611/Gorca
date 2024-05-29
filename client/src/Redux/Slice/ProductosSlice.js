@@ -15,32 +15,32 @@ const ProducSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getProducs.pending, (state) => {
-                state.users = [];
+                state.producs = [];
                 state.loading = true;
                 state.error = null;
             })
             .addCase(getProducs.fulfilled, (state, action) => {
-                state.users = action.payload;
+                state.producs = action.payload;
                 state.loading = false;
                 state.error = null;
             })
             .addCase(getProducs.rejected, (state, action) => {
-                state.users = [];
+                state.producs = [];
                 state.loading = false;
                 state.error = action.error.message;
             })
             .addCase(getProducUnique.pending, (state) => {
-                state.user = {};
+                state.produc = {};
                 state.loading = true;
                 state.error = null;
             })
             .addCase(getProducUnique.fulfilled, (state, action) => {
-                state.user = action.payload;
+                state.produc = action.payload;
                 state.loading = false;
                 state.error = null;
             })
             .addCase(getProducUnique.rejected, (state, action) => {
-                state.user = {};
+                state.produc = {};
                 state.loading = false;
                 state.error = action.error.message;
             });

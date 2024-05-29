@@ -51,6 +51,7 @@ public class ClientesController : ControllerBase
                         select new itemCliente()
                         {
                             idCliente = c.ID_Cli,
+                            RFC = c.RFC_Cli,
                             RSocial = c.Razon_Social_Cli,
                             RegFiscal = c.Regimen_Fiscal_Cli,
                             CFDI = c.Uso_CFDI_Cli,

@@ -56,7 +56,7 @@ function Clientes({ idUserEdit }) {
         setFormId(0);
         setShowModal(true);
     };
-
+    
     const handleEdit = () => {
         if (userSelected) {
             const idUserEdit = selectedRowIds[0];

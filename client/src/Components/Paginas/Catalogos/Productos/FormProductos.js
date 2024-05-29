@@ -2,79 +2,86 @@ import { Modal,Col, Button, Row, Form, Card, CardHeader, CardBody, CardFooter } 
 import '../../../Styles/Catalogos/FormClientes.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { addUser, getUserUnique, editUSer} from '../../../../Redux/Actions/Actions.js';
+import { addProduc, getProducUnique, editProduc, getProducs} from '../../../../Redux/Actions/Actions.js';
 import { useDispatch } from 'react-redux';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
 
-function FormClientes({ showForm, id, showModal, handleClose}) {
+function FormProductos({ showForm, id, showModal, handleClose}) {
     const initialUserState = {
-        idCliente: 0,
-        rfc: '',
-        rSocial: '',
-        regFiscal: '',
-        cfdi: '',
-        calle: '',
-        dirNumero: 0,
-        dirColonia: '',
-        dirCiudad: '',
-        cp: '',
-        dirPais: '',
+        idProd: 0,
+        Marc: '',
+        Vol: '',
+        FecFresc: '',
+        Sabo: '',
+        Sku: 0,
+        Prec: 0,
+        ClavUni: '',
+        ClavProd: '',
+        BaseMan: '',
+        Desc: '',
+        Existencia: 0,
+        StockMin: 0,
+        StockMax: 0
     };
 
     const dispatch = useDispatch();
-    const [user, setUser] = useState(initialUserState);
+    const [produc, setProduc] = useState(initialUserState);
 
     useEffect(() => {
         if (id > 0) {
-            dispatch(getUserUnique(id))
+            dispatch(getProducUnique(id))
                 .then((response) => {
-                    setUser(response.payload);
+                    setProduc(response.payload);
                 }).catch((error) => {
-                    console.error('Error fetching user:', error);
+                    console.error('Error fetching produc:', error);
                 });
         } else {
-            setUser({
-                idCliente: 0,
-                rfc: '',
-                rSocial: '',
-                regFiscal: '',
-                cfdi: '',
-                calle: '',
-                dirNumero: 0,
-                dirColonia: '',
-                dirCiudad: '',
-                cp: '',
-                dirPais: '',
+            setProduc({
+                idProd: 0,
+                Marc: '',
+                Vol: '',
+                FecFresc: '',
+                Sabo: '',
+                Sku: 0,
+                Prec: 0,
+                ClavUni: '',
+                ClavProd: '',
+                BaseMan: '',
+                Desc: '',
+                Existencia: 0,
+                StockMin: 0,
+                StockMax: 0
             });
         }
     }, [dispatch, id]);
 
     const handleCancel = () => {
-        setUser(initialUserState);
+        setProduc(initialUserState);
         showForm();
         handleClose();
     };
 
     const handleGuardar = async () => {
         try {
-            if (user.idCliente > 0) { // Si el ID del usuario es mayor que 0, es una edición
-                await dispatch(editUSer(user)); // Llamar a la acción de edición en lugar de addUser
+            if (produc.idProd > 0) { // Si el ID del usuario es mayor que 0, es una edición
+                await dispatch(editProduc(produc)); // Llamar a la acción de edición en lugar de addUser
             } else {
-                await dispatch(addUser(user));
+                await dispatch(addProduc(produc));
             }
             Swal.fire({
                 icon: "success",
-                title: "Cliente guardado",
+                title: "Producto guardado",
                 showConfirmButton: false,
                 timer: 1500,
             });
             handleCancel();
+            dispatch(getProducs()); 
         } catch (error) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Error al guardar Cliente",
+                text: "Error al guardar Producto",
             });
         }
     };
@@ -83,7 +90,7 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
     return (
         <Modal show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Registro de Cliente</Modal.Title>
+                <Modal.Title>Registro de Produc</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Row sm={7}>
@@ -208,4 +215,4 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
     );
 }
 
-export default FormClientes;
+export default FormProductos;

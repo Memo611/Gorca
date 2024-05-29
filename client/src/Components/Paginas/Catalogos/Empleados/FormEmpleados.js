@@ -2,12 +2,12 @@ import { Modal,Col, Button, Row, Form, Card, CardHeader, CardBody, CardFooter } 
 import '../../../Styles/Catalogos/FormClientes.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { addEmployee, getEmployeeUnique, editEmployee } from '../../../../Redux/Actions/Actions.js';
+import { addEmployee, getEmployeeUnique, editEmployee, getEmployees } from '../../../../Redux/Actions/Actions.js';
 import { useDispatch } from 'react-redux';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
 
-function FormClientes({ showForm, id, showModal, handleClose}) {
+function FormEmpleados({ showForm, id, showModal, handleClose}) {
     const initialUserState = {
         idEmp: 0,
         rfc: '',
@@ -59,6 +59,7 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
     const handleGuardar = async () => {
         try {
             if (employee.idEmp > 0) { // Si el ID del usuario es mayor que 0, es una edición
+                employee.idEmp = id;
                 await dispatch(editEmployee(employee)); // Llamar a la acción de edición en lugar de addUser
             } else {
                 await dispatch(addEmployee(employee));
@@ -70,6 +71,7 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                 timer: 1500,
             });
             handleCancel();
+            dispatch(getEmployees()); 
         } catch (error) {
             Swal.fire({
                 icon: "error",
@@ -162,11 +164,11 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='puestoEmp'>Puesto:  </Form.Label>
+                                    <Form.Label htmlFor='puestEmp'>Puesto:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="puestoEmp" name='puestoEmp' className='form-control' required value={employee.puestoEmp}
-                                        onChange={(e) => setEmployeed({ ...employee, puestoEmp: e.target.value })} />
+                                    <input type="text" id="puestEmp" name='puestEmp' className='form-control' required value={employee.puestEmp}
+                                        onChange={(e) => setEmployeed({ ...employee, puestEmp: e.target.value })} />
                                 </Col>
                             </Row>
 
@@ -206,4 +208,4 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
     );
 }
 
-export default FormClientes;
+export default FormEmpleados;

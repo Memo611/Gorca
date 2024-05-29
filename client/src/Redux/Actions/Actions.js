@@ -61,7 +61,7 @@ export const editUSer = createAsyncThunk("users/editUSer",
     async (data) => {
         try
         {      
-            const resp = await axios.put(`https://localhost:7180/api/Clientes/${data.id}`, data);
+            const resp = await axios.put(`https://localhost:7180/api/Clientes/${data.idCliente}`, data);
             return resp.data;
         } 
         catch (error) 
@@ -136,7 +136,7 @@ export const editEmployee = createAsyncThunk("employees/editEmployee",
     async (data) => {
         try
         {      
-            const resp = await axios.put(`https://localhost:7180/api/Empleados/${data.id}`, data);
+            const resp = await axios.put(`https://localhost:7180/api/Empleados/${data.idEmp}`, data);
 
             return resp.data;
         } 

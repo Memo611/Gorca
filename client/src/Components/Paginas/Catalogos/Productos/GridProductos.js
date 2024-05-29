@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import FormProductos from './FormProductos.js';
 import '../../../Styles/Catalogos/FormClientes.css';
 
-function Clientes({ idProducEdit }) {
+function GridProductos({ idProducEdit }) {
     const dispatch = useDispatch();
     const { producs } = useSelector((state) => state.getProducs);
     const [producSelected, setProducSelected] = useState(false);
@@ -53,7 +53,7 @@ function Clientes({ idProducEdit }) {
     };
 
     useEffect(() => {
-        dispatch(getProducs());
+        dispatch(getProducs())
     }, [dispatch]);
 
     const handleNew = () => {
@@ -126,9 +126,10 @@ function Clientes({ idProducEdit }) {
                 <Button className="NewUser" variant="warning" onClick={handleEdit}>Editar</Button>
                 <Button className="NewUser" variant="danger" onClick={handleDelete}>Eliminar</Button>
             </div>
+            {producs ? console.log(producs) : null }
             <ThemeProvider theme={darkTheme}>
                 <MUIDataTable
-                    title={"Lista de Clientes"}
+                    title={"Lista de Productos"}
                     data={producs || []}
                     columns={columns}
                     options={options}
@@ -140,4 +141,4 @@ function Clientes({ idProducEdit }) {
     );
 }
 
-export default Clientes;
+export default GridProductos;

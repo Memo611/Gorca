@@ -2,7 +2,7 @@ import { Modal,Col, Button, Row, Form, Card, CardHeader, CardBody, CardFooter } 
 import '../../../Styles/Catalogos/FormClientes.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { addUser, getUserUnique, editUSer} from '../../../../Redux/Actions/Actions.js';
+import { addUser, getUserUnique, editUSer, getUsers} from '../../../../Redux/Actions/Actions.js';
 import { useDispatch } from 'react-redux';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
@@ -59,6 +59,7 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
     const handleGuardar = async () => {
         try {
             if (user.idCliente > 0) { // Si el ID del usuario es mayor que 0, es una edición
+                user.idCliente = id;
                 await dispatch(editUSer(user)); // Llamar a la acción de edición en lugar de addUser
             } else {
                 await dispatch(addUser(user));
@@ -70,6 +71,7 @@ function FormClientes({ showForm, id, showModal, handleClose}) {
                 timer: 1500,
             });
             handleCancel();
+            dispatch(getUsers()); 
         } catch (error) {
             Swal.fire({
                 icon: "error",

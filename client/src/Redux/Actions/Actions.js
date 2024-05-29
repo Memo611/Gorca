@@ -211,7 +211,7 @@ export const editProduc = createAsyncThunk("producs/editProduc",
     async (data) => {
         try
         {      
-            const resp = await axios.put(`https://localhost:7180/api/Productos/${data.id}`, data);
+            const resp = await axios.put(`https://localhost:7180/api/Productos/${data.idProd}`, data);
 
             return resp.data;
         } 

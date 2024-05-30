@@ -1,30 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\",
+  "WorkspaceRootPath": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\comun\\interfaz\\iaplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:comun\\interfaz\\iaplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|c:\\users\\memo7\\downloads\\tareas\\desarrollo\\gorca\\api\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\entidades\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:entidades\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|c:\\users\\memo7\\downloads\\tareas\\desarrollo\\gorca\\api\\comun\\modelos\\itemventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:comun\\modelos\\itemventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\comun\\modelos\\itemproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:comun\\modelos\\itemproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\persistencia\\aplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:persistencia\\aplicacionbdcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|c:\\users\\memo7\\downloads\\tareas\\desarrollo\\gorca\\api\\persistencia\\configuracion\\ticket_ventaconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:persistencia\\configuracion\\ticket_ventaconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,91 +21,50 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 264,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductosController.cs",
-              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Controllers\\ProductosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductosController.cs",
-              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Controllers\\ProductosController.cs",
-              "RelativeToolTip": "Controllers\\ProductosController.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAIwGkAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T17:08:37.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AplicacionBdContexto.cs",
-              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\AplicacionBdContexto.cs",
-              "RelativeDocumentMoniker": "Persistencia\\AplicacionBdContexto.cs",
-              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\AplicacionBdContexto.cs",
-              "RelativeToolTip": "Persistencia\\AplicacionBdContexto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T05:02:58.953Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IAplicacionBdContexto.cs",
-              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Interfaz\\IAplicacionBdContexto.cs",
-              "RelativeDocumentMoniker": "Comun\\Interfaz\\IAplicacionBdContexto.cs",
-              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Interfaz\\IAplicacionBdContexto.cs",
-              "RelativeToolTip": "Comun\\Interfaz\\IAplicacionBdContexto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAnAAAA",
+              "Title": "VentaController.cs",
+              "DocumentMoniker": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Controllers\\VentaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VentaController.cs",
+              "ToolTip": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "Controllers\\VentaController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T00:21:54.626Z",
+              "WhenOpened": "2024-05-30T20:40:27.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAACVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-26T05:37:48.198Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Producto.cs",
-              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Entidades\\Producto.cs",
-              "RelativeDocumentMoniker": "Entidades\\Producto.cs",
-              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Entidades\\Producto.cs",
-              "RelativeToolTip": "Entidades\\Producto.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAhwCIAAAAqAAAA",
+              "Title": "ItemVenta.cs",
+              "DocumentMoniker": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Modelos\\ItemVenta.cs",
+              "RelativeDocumentMoniker": "Comun\\Modelos\\ItemVenta.cs",
+              "ToolTip": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Modelos\\ItemVenta.cs",
+              "RelativeToolTip": "Comun\\Modelos\\ItemVenta.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T15:45:28.163Z",
+              "WhenOpened": "2024-05-30T20:40:22.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ItemProducto.cs",
-              "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Modelos\\ItemProducto.cs",
-              "RelativeDocumentMoniker": "Comun\\Modelos\\ItemProducto.cs",
-              "ToolTip": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Modelos\\ItemProducto.cs",
-              "RelativeToolTip": "Comun\\Modelos\\ItemProducto.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAMwBkAAAAlAAAA",
+              "Title": "Ticket_ventaConfiguracion.cs",
+              "DocumentMoniker": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "RelativeDocumentMoniker": "Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "ToolTip": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "RelativeToolTip": "Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T17:08:27.014Z",
+              "WhenOpened": "2024-05-30T19:59:11.899Z",
               "EditorCaption": ""
             }
           ]

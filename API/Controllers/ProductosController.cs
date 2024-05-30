@@ -90,8 +90,8 @@ public class ProductosController : ControllerBase
         if (categoria == null)
             return BadRequest("La categoría especificada no es válida.");
         // Verificar si el proveedor proporcionado es válido
-        var proveedor = _contexto.Proveedores.Find(nuevoProducto.Provedor);
-        if (proveedor == null)
+        var Provedor = _contexto.Proveedores.Find(nuevoProducto.Provedor);
+        if (Provedor == null)
             return BadRequest("El proveedor especificado no es válido.");
 
         var existe = (from p in _contexto.Producto
@@ -103,7 +103,6 @@ public class ProductosController : ControllerBase
 
         var producto = new Producto()
         {
-            ID_Prod = nuevoProducto.idProd,
             Marca = nuevoProducto.Marc,
             Volumen = nuevoProducto.Vol,
             Fecha_Max_Frescura= nuevoProducto.FecFresc,
@@ -120,7 +119,7 @@ public class ProductosController : ControllerBase
             Stock_Max = nuevoProducto.StockMax,
             Habilitado = true,
             Categoria = categoria, // Asignar la categoría al producto
-            Proveedores = proveedor // Asignar el proveedor al producto
+            Proveedores = Provedor
         };
         
         _contexto.Producto.Add(producto);

@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 import Productos from './IndexProductos.js';
 
-function Clientes() {
+function PagProductos() {
     return (
-        <div className="Clientes" >
+        <div className="Productos" >
             <Row className='justify-content-center'>
                 <Col sm={10}>
                     <Productos />
@@ -15,4 +15,4 @@ function Clientes() {
         </div>
     )
 }
-export default Clientes;
+export default PagProductos;

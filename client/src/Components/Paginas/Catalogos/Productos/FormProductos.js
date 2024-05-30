@@ -10,19 +10,21 @@ import Swal from 'sweetalert2';
 function FormProductos({ showForm, id, showModal, handleClose}) {
     const initialUserState = {
         idProd: 0,
-        Marc: '',
-        Vol: '',
-        FecFresc: '',
-        Sabo: '',
-        Sku: 0,
-        Prec: 0,
-        ClavUni: '',
-        ClavProd: '',
-        BaseMan: '',
-        Desc: '',
-        Existencia: 0,
-        StockMin: 0,
-        StockMax: 0
+        marc: '',
+        vol: '',
+        CatProd: 0,
+        fecFresc: '',
+        sabo: '',
+        sku: 0,
+        prec: 0,
+        proveedores: 0,
+        clavUni: '',
+        clavProd: '',
+        baseMan: '',
+        desc: '',
+        existencia: 0,
+        stockMin: 0,
+        stockMax: 0
     };
 
     const dispatch = useDispatch();
@@ -39,19 +41,21 @@ function FormProductos({ showForm, id, showModal, handleClose}) {
         } else {
             setProduc({
                 idProd: 0,
-                Marc: '',
-                Vol: '',
-                FecFresc: '',
-                Sabo: '',
-                Sku: 0,
-                Prec: 0,
-                ClavUni: '',
-                ClavProd: '',
-                BaseMan: '',
-                Desc: '',
-                Existencia: 0,
-                StockMin: 0,
-                StockMax: 0
+                marc: '',
+                vol: '',
+                catProd: 0,
+                fecFresc: '',
+                sabo: '',
+                sku: 0,
+                prec: 0,
+                proveedores: 0,
+                clavUni: '',
+                clavProd: '',
+                baseMan: '',
+                desc: '',
+                existencia: 0,
+                stockMin: 0,
+                stockMax: 0
             });
         }
     }, [dispatch, id]);
@@ -65,6 +69,7 @@ function FormProductos({ showForm, id, showModal, handleClose}) {
     const handleGuardar = async () => {
         try {
             if (produc.idProd > 0) { // Si el ID del usuario es mayor que 0, es una edición
+                produc.idProd = id;
                 await dispatch(editProduc(produc)); // Llamar a la acción de edición en lugar de addUser
             } else {
                 await dispatch(addProduc(produc));
@@ -90,115 +95,174 @@ function FormProductos({ showForm, id, showModal, handleClose}) {
     return (
         <Modal show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Registro de Produc</Modal.Title>
+                <Modal.Title>Registrar Producto</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Row sm={7}>
                     <Card className='estilo'>
-                        <CardHeader className='Titulo'> Registro de Cliente </CardHeader>
+                        <CardHeader className='Titulo'> Registro de Producto </CardHeader>
 
                         <CardBody className='cuerpo'>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='rfc'> RFC </Form.Label>
+                                    <Form.Label htmlFor='marc'> Marca: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="rfc" name='rfc' className='form-control' required value={user.rfc}
-                                        onChange={(e) => setUser({ ...user, rfc: e.target.value })} />
+                                    <input type="text" id="marc" name='marc' className='form-control' required value={produc.marc}
+                                        onChange={(e) => setProduc({ ...produc, marc: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='rSocial'>Razon Social: </Form.Label>
+                                    <Form.Label htmlFor='vol'>Volumen: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="rSocial" name='rSocial' className='form-control' required value={user.rSocial}
-                                        onChange={(e) => setUser({ ...user, rSocial: e.target.value })} />
+                                    <input type="text" id="vol" name='vol' className='form-control' required value={produc.vol}
+                                        onChange={(e) => setProduc({ ...produc, vol: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='regFiscal'>Registro Fiscal: </Form.Label>
+                                    <Form.Label htmlFor='catProd'>Categoria: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="regFiscal" name='regFiscal' className='form-control' required value={user.regFiscal}
-                                        onChange={(e) => setUser({ ...user, regFiscal: e.target.value })} />
+                                    <input type="text" id="catProd" name='catProd' className='form-control' required value={produc.catProd}
+                                        onChange={(e) => setProduc({ ...produc, catProd: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='cfdi'>CFDI: </Form.Label>
+                                    <Form.Label htmlFor='fecFresc'>Fecha de Frescura: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="cfdi" name='cfdi' className='form-control' required value={user.cfdi}
-                                        onChange={(e) => setUser({ ...user, cfdi: e.target.value })} />
+                                    <input type="date" id="fecFresc" name='fecFresc' className='form-control' required value={produc.fecFresc}
+                                        onChange={(e) => setProduc({ ...produc, fecFresc: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='calle'>Calle: </Form.Label>
+                                    <Form.Label htmlFor='sabo'>Sabor: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="calle" name='calle' className='form-control' required value={user.calle}
-                                        onChange={(e) => setUser({ ...user, calle: e.target.value })} />
+                                    <input type="text" id="sabo" name='sabo' className='form-control' required value={produc.sabo}
+                                        onChange={(e) => setProduc({ ...produc, sabo: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='dirNumero'>Numero: </Form.Label>
+                                    <Form.Label htmlFor='sku'>SKU: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="number" id="dirNumero" name='dirNumero' className='form-control' required value={user.dirNumero}
-                                        onChange={(e) => setUser({ ...user, dirNumero: e.target.value })} />
+                                    <input type="number" id="sku" name='sku' className='form-control' required value={produc.sku}
+                                        onChange={(e) => setProduc({ ...produc, sku: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='dirColonia'>Colonia:  </Form.Label>
+                                    <Form.Label htmlFor='prec'>Precio: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirColonia" name='dirColonia' className='form-control' required value={user.dirColonia}
-                                        onChange={(e) => setUser({ ...user, dirColonia: e.target.value })} />
+                                    <input type="money" id="prec" name='prec' className='form-control' required value={produc.prec}
+                                        onChange={(e) => setProduc({ ...produc, prec: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='dirCiudad'>Ciudad:  </Form.Label>
+                                    <Form.Label htmlFor='proveedores'>Provedor: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirCiudad" name='dirCiudad' className='form-control' required value={user.dirCiudad}
-                                        onChange={(e) => setUser({ ...user, dirCiudad: e.target.value })} />
+                                    <input type="number" id="proveedores" name='proveedores' className='form-control' required value={produc.proveedores}
+                                        onChange={(e) => setProduc({ ...produc, proveedores: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='cp'>CP:  </Form.Label>
+                                    <Form.Label htmlFor='objImpu'>Impuesto:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="cp" name='cp' className='form-control' required value={user.cp}
-                                        onChange={(e) => setUser({ ...user, cp: e.target.value })} />
+                                    <input type="text" id="objImpu" name='objImpu' className='form-control' required value={produc.objImpu}
+                                        onChange={(e) => setProduc({ ...produc, objImpu: e.target.value })} />
                                 </Col>
                             </Row>
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='dirPais'>Pais:  </Form.Label>
+                                    <Form.Label htmlFor='clavUni'>Clave Unidad:  </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="text" id="dirPais" name='dirPais' className='form-control' required value={user.dirPais}
-                                        onChange={(e) => setUser({ ...user, dirPais: e.target.value })} />
+                                    <input type="texto" id="clavUni" name='clavUni' className='form-control' required value={produc.clavUni}
+                                        onChange={(e) => setProduc({ ...produc, clavUni: e.target.value })} />
                                 </Col>
                             </Row>
 
+                            <Row>
+                                <Col>
+                                    <Form.Label htmlFor='clavProd'>Clave del Producto:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="text" id="clavProd" name='clavProd' className='form-control' required value={produc.clavProd}
+                                        onChange={(e) => setProduc({ ...produc, clavProd: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col>
+                                    <Form.Label htmlFor='baseMan'>Base Manual:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="text" id="baseMan" name='baseMan' className='form-control' required value={produc.baseMan}
+                                        onChange={(e) => setProduc({ ...produc, baseMan: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col>
+                                    <Form.Label htmlFor='desc'>Descripcion:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="text" id="desc" name='desc' className='form-control' required value={produc.desc}
+                                        onChange={(e) => setProduc({ ...produc, desc: e.target.value })} />
+                                </Col>
+                            </Row>
+                            
+                            <Row>                       
+                                <Col>
+                                    <Form.Label htmlFor='existencia'>Stock:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="number" id="existencia" name='existencia' className='form-control' required value={produc.existencia}
+                                        onChange={(e) => setProduc({ ...produc, existencia: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>                       
+                                <Col>
+                                    <Form.Label htmlFor='stockMin'>Stock Minimo:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="number" id="stockMin" name='stockMin' className='form-control' required value={produc.stockMin}
+                                        onChange={(e) => setProduc({ ...produc, stockMin: e.target.value })} />
+                                </Col>
+                            </Row>
+
+                            <Row>                       
+                                <Col>
+                                    <Form.Label htmlFor='stockMax'>Stock Maximo:  </Form.Label>
+                                </Col>
+                                <Col>
+                                    <input type="number" id="stockMax" name='stockMax' className='form-control' required value={produc.stockMax}
+                                        onChange={(e) => setProduc({ ...produc, stockMax: e.target.value })} />
+                                </Col>
+                            </Row>
 
                         </CardBody>
 

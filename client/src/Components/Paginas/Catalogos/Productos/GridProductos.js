@@ -27,10 +27,12 @@ function GridProductos({ idProducEdit }) {
         { name: "idProd", label: "ID" },
         { name: "marc", label: "Marca" },
         { name: "vol", label: "Volumen" },
+        { name: "catProd" ,label: "Categoria"},
         { name: "fecFresc", label: "Fecha Max Frescura" },
         { name: "sabo", label: "Sabor" },
         { name: "sku", label: "SKU" },
         { name: "prec", label: "Precio" },
+        { name: "proveedor", label: "Provedor"},
         { name: "objImpu", label: "Impuesto" },
         { name: "clavUni", label: "Clave Unidad" },
         { name: "clavProd", label: "Clave del Producto" },
@@ -126,7 +128,7 @@ function GridProductos({ idProducEdit }) {
                 <Button className="NewUser" variant="warning" onClick={handleEdit}>Editar</Button>
                 <Button className="NewUser" variant="danger" onClick={handleDelete}>Eliminar</Button>
             </div>
-            {producs ? console.log(producs) : null }
+
             <ThemeProvider theme={darkTheme}>
                 <MUIDataTable
                     title={"Lista de Productos"}

@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\",
+  "WorkspaceRootPath": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\comun\\modelos\\itemfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:comun\\modelos\\itemfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,6 +46,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|d:\\tareas\\desarrollo\\gorca\\api\\persistencia\\configuracion\\detalle_facturaconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:persistencia\\configuracion\\detalle_facturaconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|c:\\users\\memo7\\downloads\\tareas\\desarrollo\\gorca\\api\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|c:\\users\\memo7\\downloads\\tareas\\desarrollo\\gorca\\api\\comun\\modelos\\itemventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:comun\\modelos\\itemventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|c:\\users\\memo7\\downloads\\tareas\\desarrollo\\gorca\\api\\persistencia\\configuracion\\ticket_ventaconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542D6714-1241-48A6-849F-91A891EACDF6}|API.csproj|solutionrelative:persistencia\\configuracion\\ticket_ventaconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 6f909aefd1e20b735d37a4b18443e89a3259864c
     }
   ],
   "DocumentGroupContainers": [
@@ -53,6 +66,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
+<<<<<<< HEAD
           "DockedWidth": 327,
           "SelectedChildIndex": 4,
           "Children": [
@@ -67,11 +81,45 @@
               "ViewState": "AQIAAAsAAAAAAAAAAAAxwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T11:51:54.83Z",
+=======
+          "DockedWidth": 264,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VentaController.cs",
+              "DocumentMoniker": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Controllers\\VentaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VentaController.cs",
+              "ToolTip": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "Controllers\\VentaController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T20:40:27.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ItemVenta.cs",
+              "DocumentMoniker": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Modelos\\ItemVenta.cs",
+              "RelativeDocumentMoniker": "Comun\\Modelos\\ItemVenta.cs",
+              "ToolTip": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Comun\\Modelos\\ItemVenta.cs",
+              "RelativeToolTip": "Comun\\Modelos\\ItemVenta.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T20:40:22.068Z",
+>>>>>>> 6f909aefd1e20b735d37a4b18443e89a3259864c
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
               "Title": "FacturasController.cs",
               "DocumentMoniker": "D:\\Tareas\\Desarrollo\\GORCA\\API\\Controllers\\FacturasController.cs",
               "RelativeDocumentMoniker": "Controllers\\FacturasController.cs",
@@ -197,6 +245,16 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T11:35:28.237Z",
+=======
+              "Title": "Ticket_ventaConfiguracion.cs",
+              "DocumentMoniker": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "RelativeDocumentMoniker": "Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "ToolTip": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "RelativeToolTip": "Persistencia\\Configuracion\\Ticket_ventaConfiguracion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T19:59:11.899Z",
+>>>>>>> 6f909aefd1e20b735d37a4b18443e89a3259864c
               "EditorCaption": ""
             }
           ]

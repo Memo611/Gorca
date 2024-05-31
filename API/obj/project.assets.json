@@ -3924,11 +3924,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
+      "projectPath": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\API.csproj",
       "packagesPath": "C:\\Users\\memo7\\.nuget\\packages\\",
-      "outputPath": "D:\\Tareas\\Desarrollo\\GORCA\\API\\obj\\",
+      "outputPath": "C:\\Users\\memo7\\Downloads\\Tareas\\Desarrollo\\GORCA\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\memo7\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3992,6 +3992,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.18, 7.0.18]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.18, 7.0.18]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.18, 7.0.18]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.18, 7.0.18]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -4000,7 +4018,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+>>>>>>> 6f909aefd1e20b735d37a4b18443e89a3259864c
       }
     }
   }

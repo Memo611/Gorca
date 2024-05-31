@@ -25,12 +25,8 @@ namespace API.Persistencia
         public DbSet<Det_Fac> DetalleFactura { get; set; }
         public DbSet<Det_Tick> DetalleTickets { get; set; }
 
-        
-       
-        
-        
-        
-        
+
+
         public override async Task<int> SaveChangesAsync(CancellationToken cancelacionToken = default)
         {
             var resultado = await base.SaveChangesAsync(cancelacionToken);

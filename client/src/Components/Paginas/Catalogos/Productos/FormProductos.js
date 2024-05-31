@@ -17,7 +17,7 @@ function FormProductos({ showForm, id, showModal, handleClose}) {
         sabo: '',
         sku: 0,
         prec: 0,
-        proveedores: 0,
+        provedor: 0,
         clavUni: '',
         clavProd: '',
         baseMan: '',
@@ -48,7 +48,7 @@ function FormProductos({ showForm, id, showModal, handleClose}) {
                 sabo: '',
                 sku: 0,
                 prec: 0,
-                proveedores: 0,
+                provedor: 0,
                 clavUni: '',
                 clavProd: '',
                 baseMan: '',
@@ -176,11 +176,11 @@ function FormProductos({ showForm, id, showModal, handleClose}) {
 
                             <Row>
                                 <Col>
-                                    <Form.Label htmlFor='proveedores'>Provedor: </Form.Label>
+                                    <Form.Label htmlFor='provedor'>Provedor: </Form.Label>
                                 </Col>
                                 <Col>
-                                    <input type="number" id="proveedores" name='proveedores' className='form-control' required value={produc.proveedores}
-                                        onChange={(e) => setProduc({ ...produc, proveedores: e.target.value })} />
+                                    <input type="number" id="provedor" name='provedor' className='form-control' required value={produc.provedor}
+                                        onChange={(e) => setProduc({ ...produc, provedor: e.target.value })} />
                                 </Col>
                             </Row>
 

@@ -1,0 +1,35 @@
+/* Estilos para el modal del carrito */
+.modal-dialog {
+    max-width: 400px;
+}
+
+/* Estilos para los elementos dentro del modal */
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.list-group {
+    margin-bottom: 1rem;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+/* Estilos para el botón de cerrar */
+.modal-footer button {
+    padding: 0.5rem 1rem;
+}
+
+/* Estilos para el botón de pagar */
+.modal-footer button:last-child {
+    margin-left: auto;
+}

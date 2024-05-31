@@ -222,3 +222,18 @@ export const editProduc = createAsyncThunk("producs/editProduc",
     }
 );
 
+//Action para agregar a un empleado
+export const addVenta = createAsyncThunk("sale/addVenta",
+    async (data) => {
+        try
+        {      
+            const resp = await axios.post('https://localhost:7180/api/Venta/RealizarVenta', data);
+
+            return resp.data;
+        } 
+        catch (error) 
+        {
+            return null;
+        }
+    }
+);

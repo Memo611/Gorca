@@ -32,7 +32,7 @@ function GridProductos({ idProducEdit }) {
         { name: "sabo", label: "Sabor" },
         { name: "sku", label: "SKU" },
         { name: "prec", label: "Precio" },
-        { name: "proveedor", label: "Provedor"},
+        { name: "provedor", label: "Provedor"},
         { name: "objImpu", label: "Impuesto" },
         { name: "clavUni", label: "Clave Unidad" },
         { name: "clavProd", label: "Clave del Producto" },
@@ -72,7 +72,7 @@ function GridProductos({ idProducEdit }) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Seleccione un Empleado para editar",
+                text: "Seleccione un Producto para editar",
             });
         }
     };
@@ -112,7 +112,7 @@ function GridProductos({ idProducEdit }) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "Seleccione un Empleado para eliminar",
+                text: "Seleccione un Producto para eliminar",
             });
         }
     };

@@ -12,7 +12,7 @@ public class Factura
     public int Folio { get; set; }
     public int Version { get; set; }
     public string Metodo_Pago { get; set; }
-    public int Num_certif { get; set; }
+    public string Num_certif { get; set; }
     public string Forma_Pago { get; set; }
     public DateTime Fecha_Emision_Fac { get; set; }
     public TimeSpan Hora_Emision_Fac { get; set; }

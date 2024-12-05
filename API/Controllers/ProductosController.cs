@@ -2,12 +2,13 @@
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Text.RegularExpressions;
 
 namespace API.Controllers;
-
+[EnableCors("PoliticasCors")]
 [Route("api/[Controller]")]
 [ApiController]
 

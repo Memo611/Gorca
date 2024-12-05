@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "whF8GT3X9s8=",
+  "dgSpecHash": "Vc0qky+o3dU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\memo7\\Downloads\\Tareas\\GASCA\\Gorca\\API\\API.csproj",
+  "projectFilePath": "D:\\GASCA\\Proyectos Propios\\GORCA\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\memo7\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\memo7\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

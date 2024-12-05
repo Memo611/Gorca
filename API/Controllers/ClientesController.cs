@@ -2,9 +2,10 @@ using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace API.Controllers;
-
+[EnableCors("PoliticasCors")]
 [Route("api/[Controller]")]
 [ApiController]
 

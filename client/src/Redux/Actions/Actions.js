@@ -5,7 +5,7 @@ export const getUsers = createAsyncThunk("users/getUsers",
     async () => {
         try
         {      
-            const resp = await axios.get('https://localhost:7180/api/Clientes');
+            const resp = await axios.get('http://gorca.somee.com/api/Clientes');
 
             return resp.data;
         } 
@@ -20,7 +20,7 @@ export const getUserUnique = createAsyncThunk("users/getUserUnique",
     async (id) => {
         try
         {      
-            const resp = await axios.get(`https://localhost:7180/api/Clientes/${id}`);
+            const resp = await axios.get(`http://gorca.somee.com/api/Clientes/${id}`);
 
             return resp.data;
         } 
@@ -34,7 +34,7 @@ export const getUserUnique = createAsyncThunk("users/getUserUnique",
 export const deleteUser = createAsyncThunk("users/deleteUser",
     async (id) => {
         try {
-            const resp = await axios.delete(`https://localhost:7180/api/Clientes/${id}`);
+            const resp = await axios.delete(`http://gorca.somee.com/api/Clientes/${id}`);
             return resp.data;
         } catch (error) {
             throw new Error(error);
@@ -46,7 +46,7 @@ export const addUser = createAsyncThunk("users/addUser",
     async (data) => {
         try
         {      
-            const resp = await axios.post('https://localhost:7180/api/Clientes', data);
+            const resp = await axios.post('http://gorca.somee.com/api/Clientes', data);
 
             return resp.data;
         } 
@@ -61,7 +61,7 @@ export const editUSer = createAsyncThunk("users/editUSer",
     async (data) => {
         try
         {      
-            const resp = await axios.put(`https://localhost:7180/api/Clientes/${data.idCliente}`, data);
+            const resp = await axios.put(`http://gorca.somee.com/api/Clientes/${data.idCliente}`, data);
             return resp.data;
         } 
         catch (error) 
@@ -77,7 +77,7 @@ export const getEmployees = createAsyncThunk("employees/getEmployees",
     async () => {
         try
         {      
-            const resp = await axios.get('https://localhost:7180/api/Empleados');
+            const resp = await axios.get('http://gorca.somee.com/api/Empleados');
 
             return resp.data;
         } 
@@ -92,7 +92,7 @@ export const getEmployeeUnique = createAsyncThunk("employees/getEmployeeUnique",
     async (id) => {
         try
         {      
-            const resp = await axios.get(`https://localhost:7180/api/Empleados/${id}`);
+            const resp = await axios.get(`http://gorca.somee.com/api/Empleados/${id}`);
 
             return resp.data;
         } 
@@ -107,7 +107,7 @@ export const deleteEmployee = createAsyncThunk("employees/deleteEmployee",
     async (id) => {
         try
         {      
-            const resp = await axios.delete(`https://localhost:7180/api/Empleados/${id}`);
+            const resp = await axios.delete(`http://gorca.somee.com/api/Empleados/${id}`);
             return resp.data;
         } 
         catch (error) 
@@ -121,7 +121,7 @@ export const addEmployee = createAsyncThunk("employees/addEmployee",
     async (data) => {
         try
         {      
-            const resp = await axios.post('https://localhost:7180/api/Empleados', data);
+            const resp = await axios.post('http://gorca.somee.com/api/Empleados', data);
 
             return resp.data;
         } 
@@ -136,7 +136,7 @@ export const editEmployee = createAsyncThunk("employees/editEmployee",
     async (data) => {
         try
         {      
-            const resp = await axios.put(`https://localhost:7180/api/Empleados/${data.idEmp}`, data);
+            const resp = await axios.put(`http://gorca.somee.com/api/Empleados/${data.idEmp}`, data);
 
             return resp.data;
         } 
@@ -152,7 +152,7 @@ export const getProducs = createAsyncThunk("producs/getProducs",
     async () => {
         try
         {      
-            const resp = await axios.get('https://localhost:7180/api/Productos');
+            const resp = await axios.get('http://gorca.somee.com/api/Productos');
 
             return resp.data;
         } 
@@ -167,7 +167,7 @@ export const getProducUnique = createAsyncThunk("producs/getProducUnique",
     async (id) => {
         try
         {      
-            const resp = await axios.get(`https://localhost:7180/api/Productos/${id}`);
+            const resp = await axios.get(`http://gorca.somee.com/api/Productos/${id}`);
 
             return resp.data;
         } 
@@ -182,7 +182,7 @@ export const deleteProduc = createAsyncThunk("producs/deleteProduc",
     async (id) => {
         try
         {      
-            const resp = await axios.delete(`https://localhost:7180/api/Productos/${id}`);
+            const resp = await axios.delete(`http://gorca.somee.com/api/Productos/${id}`);
             return resp.data;
         } 
         catch (error) 
@@ -196,7 +196,7 @@ export const addProduc = createAsyncThunk("producs/addProduc",
     async (data) => {
         try
         {      
-            const resp = await axios.post('https://localhost:7180/api/Productos', data);
+            const resp = await axios.post('http://gorca.somee.com/api/Productos', data);
 
             return resp.data;
         } 
@@ -211,7 +211,7 @@ export const editProduc = createAsyncThunk("producs/editProduc",
     async (data) => {
         try
         {      
-            const resp = await axios.put(`https://localhost:7180/api/Productos/${data.idProd}`, data);
+            const resp = await axios.put(`http://gorca.somee.com/api/Productos/${data.idProd}`, data);
 
             return resp.data;
         } 
@@ -227,7 +227,7 @@ export const addVenta = createAsyncThunk("sale/addVenta",
     async (data) => {
         try
         {      
-            const resp = await axios.post('https://localhost:7180/api/Venta/RealizarVenta', data);
+            const resp = await axios.post('http://gorca.somee.com/api/Venta/RealizarVenta', data);
 
             return resp.data;
         } 

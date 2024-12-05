@@ -1,13 +1,16 @@
 ﻿using API.Comun.Interfaz;
 using API.Comun.Modelos;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 namespace API.Controllers
 {
-    [ApiController]
+
+    [EnableCors("PoliticasCors")]
     [Route("api/[controller]")]
+    [ApiController]
     public class ReportesController : ControllerBase
     {
         private readonly IApliacacionBdContexto _context;

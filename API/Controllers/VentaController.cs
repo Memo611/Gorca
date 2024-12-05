@@ -1,11 +1,13 @@
 using API.Comun;
 using API.Comun.Interfaz;
 using API.Entidades;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace API.Controllers
 {
+    [EnableCors("PoliticasCors")]
     [ApiController]
     [Route("api/[controller]")]
     public class VentaController : ControllerBase

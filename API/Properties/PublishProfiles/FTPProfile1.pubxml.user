@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9heOEnhR9UK7TllKvDtWnAAAAAACAAAAAAAQZgAAAAEAACAAAAD4hsgiEy3RmwfYvMA8JZEFNa/1osLDCXdIMU1YFdK4DwAAAAAOgAAAAAIAACAAAAAYJyWZO0UCNhf1uJpOZv+wvNQej2l8I3hTi2C+HiKydiAAAABlendjiM0t6DsnPe6Uve6MVb6RhUPusmkSUqyDixLLBEAAAADdv/N7JMCLSiBIIz3oSbJaw6YTpD0mWRA1BilO32y0dfmVd3PkIyUWjemuk6HHouXGmUX9GpGQjHJCwwwXVb36</EncryptedPassword>
+    <_PublishTargetUrl>ftp://155.254.244.37/www.gorca.somee.com</_PublishTargetUrl>
+    <History>False|2024-12-05T00:41:29.0351418Z||;False|2024-12-04T17:40:25.9061621-07:00||;False|2024-12-04T17:37:10.2341285-07:00||;False|2024-12-04T17:33:59.8072602-07:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="API.runtimeconfig.json">
+      <publishTime>04/12/2024 17:07:53</publishTime>
+    </File>
+    <File Include="appsettings.Development.json">
+      <publishTime>05/30/2024 17:12:30</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.OpenApi.dll">
+      <publishTime>03/19/2024 21:20:24</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>10/01/2023 23:48:22</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

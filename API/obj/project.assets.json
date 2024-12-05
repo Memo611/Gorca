@@ -3924,11 +3924,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\memo7\\Downloads\\Tareas\\GASCA\\Gorca\\API\\API.csproj",
+      "projectUniqueName": "D:\\GASCA\\Proyectos Propios\\GORCA\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\memo7\\Downloads\\Tareas\\GASCA\\Gorca\\API\\API.csproj",
+      "projectPath": "D:\\GASCA\\Proyectos Propios\\GORCA\\API\\API.csproj",
       "packagesPath": "C:\\Users\\memo7\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\memo7\\Downloads\\Tareas\\GASCA\\Gorca\\API\\obj\\",
+      "outputPath": "D:\\GASCA\\Proyectos Propios\\GORCA\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\memo7\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3939,7 +3939,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4001,7 +4000,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
